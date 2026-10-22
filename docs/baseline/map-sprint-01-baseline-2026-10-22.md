@@ -110,3 +110,13 @@
 - Drive 직접 열람: KOREA Alpha 0.2 · GLB 렌더러·한양 v0.3 공간 데이터 적용 결과 [DRAFT PR #8] (2026-10-21)
 - 라이브 직접 확인: https://korea-hanyang-alpha02-qa.vercel.app/ 제목 (2026-10-22 밤 KST)
 - BLOCKED 기록: GitHub 커넥터의 aldol-worldforge 404 (비공개 저장소, 앱 미선택 추정), 공개 fetch 404, 라이브 브라우저 직접 열람도 GitHub 404 (2026-10-22 22:00 KST)
+
+## 6. M0 추가 확인 (2026-10-22 22:30~23:00 UTC, M0 Foundation 작업 중)
+
+위 1~5절은 작성 당시 기록으로 그대로 둔다. 이후 저장소 직접 접근 경로가 생겨 다음을 확인했다. 등급은 이 절에서 갱신한다.
+
+- OBSERVED · PR #9 직접 열람: `aldol2678/aldol-worldforge#9` "KOREA Alpha 0.5 QA: Joseon life map, linked quests and forest paths", **Draft / Open / 미병합**, head `feature/korea-alpha-03-market-art` @ `cb4d077702de8b767204f18b0ab1f25eb3b70163`, base `feature/korea-alpha-02-glb-world` @ `c2883e5e`, 커밋 25개, 변경 파일 286개.
+- OBSERVED · 로컬 재실행 @ `cb4d077`: KOREA 게임 테스트 73/73, 공통 런타임 5/5, 빌드, `check:dist` PASS. app.js 2,329,742 bytes, SHA-256 `3cff1cb218805611c66fef0ec41d3c0766f70d483ae77bda784ee42dee63ed59` — PR 본문 기록과 같다.
+- OBSERVED · 라이브 QA 대조: https://korea-hanyang-alpha02-qa.vercel.app/ 의 `build-manifest.json` 81개 항목이 위 로컬 빌드 manifest와 전부 일치하고, 실제 내려받은 app.js가 로컬 빌드와 바이트 단위로 같다. 따라서 §1의 "Alpha 0.5 서빙 빌드 커밋 UNKNOWN"은 **`cb4d077` 빌드와 동일한 산출물**로 갱신한다. 배포 ID(`dpl_FyBmnJaReL5zkzqGuEjNpCwshXen`)는 PR 본문 기재이며 Vercel에서 직접 조회하지 않았다 (DOCUMENTED).
+- OBSERVED · 청크 좌표 코드 검증: `src/chunk-catalog.js` @ `cb4d077`의 `CHUNKS`가 §2 표와 같다 (grove Z[-160,-96], lane Z[-96,-32], market Z[-32,32], 모두 X[-32,32]). `WORLD_BOUNDS` = X[-30.5,30.5] Z[-158.5,30.5]. 저장 키 `korea.alpha01.market.save.v1`. 대조 결과: `qa/m0/private-bridge-report.json`.
+- 변화 없음: Android/iOS 실기기·장시간 성능 기준선은 여전히 없다 (UNVERIFIED).

@@ -1,0 +1,197 @@
+{
+  "check": "hangaram-private-bridge",
+  "koreaDir": "WORLDFORGE_KOREA_DIR (local, not published)",
+  "koreaCommit": "cb4d077702de8b767204f18b0ab1f25eb3b70163",
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "load chunk-catalog.js",
+      "result": "PASS"
+    },
+    {
+      "name": "load economy.js",
+      "result": "PASS"
+    },
+    {
+      "name": "load errands.js",
+      "result": "PASS"
+    },
+    {
+      "name": "load life-quests.js",
+      "result": "PASS"
+    },
+    {
+      "name": "source commit matches pack legacy commit",
+      "result": "PASS",
+      "expected": "cb4d077702de8b767204f18b0ab1f25eb3b70163",
+      "actual": "cb4d077702de8b767204f18b0ab1f25eb3b70163"
+    },
+    {
+      "name": "legacy chunk catalog (id/min/max/uri) identical",
+      "result": "PASS",
+      "hangaram": [
+        {
+          "id": "grove",
+          "min": [
+            -32,
+            -160
+          ],
+          "max": [
+            32,
+            -96
+          ],
+          "uri": "chunks/grove.json"
+        },
+        {
+          "id": "lane",
+          "min": [
+            -32,
+            -96
+          ],
+          "max": [
+            32,
+            -32
+          ],
+          "uri": "chunks/lane.json"
+        },
+        {
+          "id": "market",
+          "min": [
+            -32,
+            -32
+          ],
+          "max": [
+            32,
+            32
+          ],
+          "uri": "chunks/market.json"
+        }
+      ],
+      "korea": [
+        {
+          "id": "market",
+          "min": [
+            -32,
+            -32
+          ],
+          "max": [
+            32,
+            32
+          ],
+          "uri": "chunks/market.json"
+        },
+        {
+          "id": "lane",
+          "min": [
+            -32,
+            -96
+          ],
+          "max": [
+            32,
+            -32
+          ],
+          "uri": "chunks/lane.json"
+        },
+        {
+          "id": "grove",
+          "min": [
+            -32,
+            -160
+          ],
+          "max": [
+            32,
+            -96
+          ],
+          "uri": "chunks/grove.json"
+        }
+      ]
+    },
+    {
+      "name": "planned/reserved slots do not overlap KOREA chunks",
+      "result": "PASS",
+      "overlaps": []
+    },
+    {
+      "name": "harvest ids identical",
+      "result": "PASS",
+      "korea": [
+        "grove.wood.0",
+        "grove.wood.1",
+        "grove.wood.2",
+        "grove.wood.3"
+      ]
+    },
+    {
+      "name": "legacy save key identical",
+      "result": "PASS",
+      "hangaram": "korea.alpha01.market.save.v1",
+      "korea": "korea.alpha01.market.save.v1"
+    },
+    {
+      "name": "legacy numeric fields covered",
+      "result": "PASS",
+      "hangaram": [
+        "cloth",
+        "coins",
+        "dishes",
+        "meals",
+        "pouches",
+        "rice",
+        "sales",
+        "water",
+        "wood"
+      ],
+      "korea": [
+        "cloth",
+        "coins",
+        "dishes",
+        "meals",
+        "pouches",
+        "rice",
+        "sales",
+        "water",
+        "wood"
+      ]
+    },
+    {
+      "name": "errand ids identical",
+      "result": "PASS",
+      "korea": [
+        "meal",
+        "dishes",
+        "pouch",
+        "north"
+      ]
+    },
+    {
+      "name": "life quest ids identical",
+      "result": "PASS",
+      "korea": [
+        "firewood",
+        "cook",
+        "delivery"
+      ]
+    },
+    {
+      "name": "save round trip through hangaram v1 preserves KOREA state",
+      "result": "PASS"
+    },
+    {
+      "name": "migrated progress keeps KOREA ids verbatim",
+      "result": "PASS"
+    },
+    {
+      "name": "migrated position equals KOREA position",
+      "result": "PASS"
+    }
+  ],
+  "info": {
+    "koreaWorldBounds": {
+      "minX": -30.5,
+      "maxX": 30.5,
+      "minZ": -158.5,
+      "maxZ": 30.5
+    },
+    "note": "KOREA WORLD_BOUNDS.maxZ가 30.5이므로 마포나루(Z 32~96)를 실제 런타임에 올리려면 HG-01에서 WORLD_BOUNDS·충돌·경계 이동 차단을 함께 확장해야 한다."
+  }
+}
