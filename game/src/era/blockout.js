@@ -76,3 +76,73 @@ export function validateBlockout(doc, { pack, chunk }) {
   }
   return { ok: errors.length === 0, errors };
 }
+
+
+/**
+ * HG-01 전용 도식 연결 게이트. 문서 좌표는 역사 실측치가 아니다.
+ * 시장 끝 Z=32에서 폭 6m, 중심 X=0인 도로가 연결되는지 검증한다.
+ */
+export function validateNaruEntrance(doc, { edgeZ = 32, centerX = 0, width = 6, exclusion = 2 } = {}) {
+  const errors = [];
+  const start = (doc.paths ?? []).find((p) =>
+    p.points?.some(([x, z]) => x === centerX && z === edgeZ) && p.width === width);
+  if (!start) errors.push('E_NARU_ROAD_SEAM: missing x=0 width=6 road at z=32');
+  for (const p of doc.primitives ?? []) {
+    if (p.collision !== 'solid') continue;
+    const [x, , z] = p.position;
+    const reachX = p.yaw ? Math.hypot(p.size[0], p.size[2]) / 2 : p.size[0] / 2;
+    const reachZ = p.yaw ? Math.hypot(p.size[0], p.size[2]) / 2 : p.size[2] / 2;
+    if (z-reachZ < edgeZ+exclusion && z+reachZ > edgeZ &&
+        x+reachX > centerX-width/2 && x-reachX < centerX+width/2) {
+      errors.push('E_NARU_SEAM_SOLID: ' + p.id);
+    }
+  }
+  return { ok: errors.length === 0, errors };
+}
+
+/**
+ * 검수용 보행 격자. solid 소품 및 물가(데크 외 Z>=90)를 제외한다.
+ * 게임 런타임의 충돌 판정을 대체하지 않는다.
+ */
+export function checkNaruFootpaths(doc, {
+  start = [0, 32.5], goals = [[0, 88], [-8, 60], [7, 60], [19, 63]],
+  bounds = { min: [-32, 32], max: [32, 96] },
+  step = .5, radius = .32,
+} = {}) {
+  const cols = Math.round((bounds.max[0]-bounds.min[0])/step)+1;
+  const rows = Math.round((bounds.max[1]-bounds.min[1])/step)+1;
+  const blocked = (x,z) => {
+    if (x < bounds.min[0]+radius || x > bounds.max[0]-radius ||
+        z < bounds.min[1]+radius || z > bounds.max[1]-radius) return true;
+    if (z >= 90 && Math.abs(x) > 2.1) return true; // 물가 안전 통행 보류
+    return (doc.primitives ?? []).some((p) => {
+      if (p.collision !== 'solid') return false;
+      const [px,,pz] = p.position;
+      const w = p.yaw ? Math.hypot(p.size[0],p.size[2]) : p.size[0];
+      const d = p.yaw ? Math.hypot(p.size[0],p.size[2]) : p.size[2];
+      return Math.abs(px-x) < w/2+radius && Math.abs(pz-z) < d/2+radius;
+    });
+  };
+  const at = ([x,z]) => [Math.round((x-bounds.min[0])/step),Math.round((z-bounds.min[1])/step)];
+  const key = (cx,cz) => cz*cols+cx;
+  const [sx,sz] = at(start);
+  const visited = new Uint8Array(cols*rows);
+  const queue = [[sx,sz]];
+  visited[key(sx,sz)]=1;
+  let head=0;
+  while(head<queue.length){
+    const [cx,cz]=queue[head++];
+    for(const [dx,dz] of [[0,1],[0,-1],[1,0],[-1,0]]){
+      const nx=cx+dx,nz=cz+dz;
+      if(nx<0||nx>=cols||nz<0||nz>=rows||visited[key(nx,nz)])continue;
+      const x=bounds.min[0]+nx*step,z=bounds.min[1]+nz*step;
+      if(blocked(x,z))continue;
+      visited[key(nx,nz)]=1;queue.push([nx,nz]);
+    }
+  }
+  const unreachable=goals.filter(([x,z])=>{
+    const [cx,cz]=at([x,z]);
+    return cx<0||cx>=cols||cz<0||cz>=rows||!visited[key(cx,cz)];
+  });
+  return {ok:unreachable.length===0,unreachable,visited:queue.length,step};
+}

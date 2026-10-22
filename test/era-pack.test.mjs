@@ -7,24 +7,24 @@ import { readWorldpackJson } from './helpers/worldpacks.mjs';
 const places = await readWorldpackJson('places.json');
 const joseon = await readWorldpackJson('joseon-1792/pack.json');
 const modern = await readWorldpackJson('modern-2026/pack.json');
+const naruBlockout = await readWorldpackJson('joseon-1792/chunks/naru.blockout.json');
+const blockouts = new Map([['naru', naruBlockout]]);
 const clone = (v) => structuredClone(v);
 
 test('저장소의 실제 장소·시대팩이 검증을 통과한다', () => {
   assert.deepEqual(validatePlaces(places), { ok: true, errors: [] });
-  assert.deepEqual(validateEraPack(joseon, { places, blockouts: new Map() }), { ok: true, errors: [] });
+  assert.deepEqual(validateEraPack(joseon, { places, blockouts }), { ok: true, errors: [] });
   assert.deepEqual(validateEraPack(modern, { places, blockouts: new Map() }), { ok: true, errors: [] });
 });
 
-test('1792 팩: 기존 3청크는 legacy-reference, 마포나루·갈대 물가는 planned, 나머지 7개는 reserved', () => {
-  const by = (status) => joseon.chunks.filter((c) => c.status === status).map((c) => c.id).sort();
-  assert.deepEqual(by('legacy-reference'), ['grove', 'lane', 'market']);
-  assert.deepEqual(by('planned'), ['naru', 'reed-shore']);
-  assert.equal(by('reserved').length, 7);
-  assert.equal(by('blockout').length, 0, 'M0에는 완성된 블록아웃 청크가 없다');
-  assert.equal(joseon.chunks.length, 12);
-  const naru = joseon.chunks.find((c) => c.id === 'naru');
-  assert.equal(naru.plannedIn, 'HG-01');
-  assert.equal(naru.blockoutTarget, 'chunks/naru.blockout.json');
+test('1792 팩: 기존 3, 마포나루 블록아웃 1, 갈대 물가 계획 1, 예약 7', () => {
+  const by = (s) => joseon.chunks.filter((c) => c.status === s).map((c) => c.id).sort();
+  assert.deepEqual(by('legacy-reference'), ['grove','lane','market']);
+  assert.deepEqual(by('blockout'), ['naru']);
+  assert.deepEqual(by('planned'), ['reed-shore']);
+  assert.equal(by('reserved').length,7);
+  assert.equal(joseon.chunks.length,12);
+  assert.equal(joseon.chunks.find((c) => c.id === 'naru').blockout,'chunks/naru.blockout.json');
 });
 
 test('2026 팩은 예약 상태이며 내용·지형 기하가 없다', () => {
@@ -63,7 +63,7 @@ test('구현 상태를 부풀리는 데이터는 거부한다', () => {
   legacyBlockout.chunks[0].blockout = 'chunks/grove.json';
   assert.match(validateEraPack(legacyBlockout, { places }).errors.join('\n'), /must not ship a public blockout/);
   const plannedWithContent = clone(joseon);
-  plannedWithContent.chunks.find((c) => c.id === 'naru').blockout = 'chunks/naru.blockout.json';
+  plannedWithContent.chunks.find((c) => c.id === 'reed-shore').blockout = 'chunks/reed-shore.blockout.json';
   assert.match(validateEraPack(plannedWithContent, { places }).errors.join('\n'), /must not ship a blockout/);
   const missingDoc = clone(joseon);
   Object.assign(missingDoc.chunks.find((c) => c.id === 'naru'), { status: 'blockout', blockout: 'chunks/naru.blockout.json' });

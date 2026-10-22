@@ -13,10 +13,10 @@ test('엔진 호스트 계약은 필수 메서드와 capabilities를 강제한�
   assert.doesNotThrow(() => createNullHost());
 });
 
-test('공개 호스트 세션: 12청크 서술자를 올리되 적재 가능한 내용은 0개 (M0 정직성)', async () => {
+test('공개 호스트 세션: 12청크 서술자를 올리되 적재 가능한 내용은 블록아웃 1개', async () => {
   const host = createNullHost();
   const session = await openEraSession({ registry, host, eraId: 'joseon-1792' });
-  assert.deepEqual(session.summary, { total: 12, loadable: 0, byStatus: { 'legacy-reference': 3, planned: 2, reserved: 7 } });
+  assert.deepEqual(session.summary, { total: 12, loadable: 1, byStatus: { 'legacy-reference': 3, blockout: 1, planned: 1, reserved: 7 } });
   const snap = host.snapshot();
   assert.equal(snap.mounted.length, 12);
   assert.equal(snap.terrain.status, 'draft-schematic');
@@ -28,8 +28,8 @@ test('공개 호스트 세션: 12청크 서술자를 올리되 적재 가능한 
 test('worldforge-korea 능력이 있는 호스트에서는 기존 3청크가 적재 가능해진다', async () => {
   const host = createNullHost({ capabilities: ['worldforge-korea'] });
   const session = await openEraSession({ registry, host, eraId: 'joseon-1792' });
-  assert.equal(session.summary.loadable, 3);
-  assert.deepEqual(session.descriptors.filter((d) => d.loadable).map((d) => d.chunkId).sort(), ['grove', 'lane', 'market']);
+  assert.equal(session.summary.loadable, 4);
+  assert.deepEqual(session.descriptors.filter((d) => d.loadable).map((d) => d.chunkId).sort(), ['grove', 'lane', 'market', 'naru']);
 });
 
 test('2026 세션은 예약 셀 5개, 지형도 예약 상태', async () => {
