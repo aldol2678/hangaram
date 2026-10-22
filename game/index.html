@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="robots" content="noindex">
+  <title>한가람 · 블록아웃 미리보기 (M0)</title>
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <canvas id="game" aria-label="블록아웃 3D 미리보기"></canvas>
+  <div id="labels" aria-hidden="true"></div>
+
+  <header id="hud">
+    <div class="hud-title">
+      <strong>한가람 · 블록아웃 미리보기</strong>
+      <span class="badge">M0 · 게임 런타임 아님</span>
+      <button type="button" id="info-toggle" aria-expanded="false" aria-controls="info">정보</button>
+    </div>
+    <select id="era" aria-label="시대팩 보기 (데이터 보기 · 게임 내 시대 전환 아님)" aria-describedby="era-note"></select>
+    <p id="focus-label" aria-live="polite"></p>
+    <div id="info" hidden>
+      <p id="era-note"></p>
+      <p id="legend"></p>
+      <p id="status">불러오는 중…</p>
+      <p class="keys">PC: WASD/화살표 이동 · Shift 빠르게 · M 전체 보기 · 드래그 회전 · 휠 확대</p>
+    </div>
+  </header>
+
+  <div id="toast" role="status" hidden></div>
+
+  <div id="controls" hidden>
+    <div id="stick" data-control="stick" aria-label="이동 스틱">
+      <div id="stick-knob"></div>
+    </div>
+    <button type="button" data-control="jump" aria-label="점프 (미리보기에서는 동작 없음)">점프</button>
+    <button type="button" data-control="run" aria-pressed="false" aria-label="빠르게 이동 전환">달리기</button>
+    <button type="button" data-control="interact" aria-label="상호작용 (미리보기에서는 동작 없음)">교류</button>
+    <button type="button" data-control="map" aria-label="전체 보기 전환">지도</button>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

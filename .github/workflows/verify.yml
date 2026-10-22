@@ -1,0 +1,36 @@
+name: hangaram verify
+# 비용 최소화: Draft PR 푸시에서는 job을 건너뛴다(실행 시간 0). Ready for review 이후와 수동 실행에서만 돈다.
+# 브라우저 QA와 비공개 브리지 대조는 CI에서 돌리지 않는다 (로컬 전용, qa/m0/REPORT.md에 기록).
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "game/**"
+      - "scripts/**"
+      - "test/**"
+      - "assets/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/verify.yml"
+permissions:
+  contents: read
+concurrency:
+  group: hangaram-verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "22"
+      - run: npm ci --no-fund --no-audit
+      - run: npm run verify
+      - run: npm audit --audit-level=high
+      - run: npm run check:bridge
