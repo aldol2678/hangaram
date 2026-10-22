@@ -1,0 +1,18 @@
+{
+  "format": "hangaram.blockout",
+  "version": 1,
+  "era": "joseon-1792",
+  "chunk": "naru",
+  "note": "형식 검증용 테스트 고정물. HG-01 마포나루 블록아웃 결과물이 아니며 게임·미리보기에 적재되지 않는다.",
+  "primitives": [
+    { "id": "hg.j1792.naru.ground", "shape": "box", "position": [0, -0.2, 64], "size": [64, 0.4, 64], "color": "#c2b38c", "collision": "walkable" },
+    { "id": "hg.j1792.naru.dock.0", "shape": "box", "position": [0, 0.3, 88], "size": [6, 0.3, 14], "yaw": 0, "color": "#8a6a48", "collision": "walkable" },
+    { "id": "hg.j1792.naru.post.0", "shape": "cylinder", "position": [-3, 0.6, 94], "size": [0.3, 1.2, 0.3], "color": "#6e5235", "collision": "solid" }
+  ],
+  "paths": [
+    { "id": "hg.j1792.naru.path.market-to-dock", "points": [[0, 32], [0, 60], [0, 82]], "width": 6 }
+  ],
+  "interactions": [
+    { "id": "hg.j1792.naru.spot.cargo", "kind": "cargo-pile", "position": [8, 76], "radius": 2.4, "placeholder": true }
+  ]
+}

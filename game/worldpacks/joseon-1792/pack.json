@@ -1,0 +1,84 @@
+{
+  "format": "hangaram.era-pack",
+  "version": 1,
+  "id": "joseon-1792",
+  "label": "1792 마포 · 조선 후기 생활권",
+  "year": 1792,
+  "status": "in-development",
+  "coordinateSystem": "hangaram.local/v1",
+  "entityPrefix": "hg.j1792",
+  "disclaimer": "게임용 도식 배치와 상상 복원이다. 역사 실측·고증 복원이 아니다.",
+  "terrain": {
+    "status": "draft-schematic",
+    "groundY": 0,
+    "water": [
+      {
+        "id": "hg.j1792.terrain.hangang",
+        "kind": "river",
+        "name": "한강 수면 (장식 영역, 청크 수 제외)",
+        "min": [-96, 96],
+        "max": [96, 224],
+        "surfaceY": -0.35
+      }
+    ]
+  },
+  "legacyIds": {
+    "source": "worldforge-korea",
+    "commit": "cb4d077702de8b767204f18b0ab1f25eb3b70163",
+    "note": "기존 KOREA 저장 데이터가 참조하는 ID. 한가람에서 개명·재사용하지 않는다.",
+    "errands": ["meal", "dishes", "pouch", "north"],
+    "life": ["firewood", "cook", "delivery"],
+    "harvest": ["grove.wood.0", "grove.wood.1", "grove.wood.2", "grove.wood.3"]
+  },
+  "chunks": [
+    {
+      "id": "grove",
+      "cell": "0:-2",
+      "name": "숲길",
+      "places": ["mapo.forest-path"],
+      "status": "legacy-reference",
+      "legacy": { "source": "worldforge-korea", "chunkId": "grove", "uri": "chunks/grove.json", "commit": "cb4d077702de8b767204f18b0ab1f25eb3b70163" }
+    },
+    {
+      "id": "lane",
+      "cell": "0:-1",
+      "name": "주거 골목",
+      "places": ["mapo.residential-lane"],
+      "status": "legacy-reference",
+      "legacy": { "source": "worldforge-korea", "chunkId": "lane", "uri": "chunks/lane.json", "commit": "cb4d077702de8b767204f18b0ab1f25eb3b70163" }
+    },
+    {
+      "id": "market",
+      "cell": "0:0",
+      "name": "중심 시장",
+      "places": ["mapo.market"],
+      "status": "legacy-reference",
+      "legacy": { "source": "worldforge-korea", "chunkId": "market", "uri": "chunks/market.json", "commit": "cb4d077702de8b767204f18b0ab1f25eb3b70163" }
+    },
+    {
+      "id": "naru",
+      "cell": "0:1",
+      "name": "마포나루",
+      "places": ["mapo.naru"],
+      "status": "planned",
+      "plannedIn": "HG-01",
+      "blockoutTarget": "chunks/naru.blockout.json"
+    },
+    {
+      "id": "reed-shore",
+      "cell": "1:1",
+      "name": "갈대 물가",
+      "places": ["mapo.reed-shore"],
+      "status": "planned",
+      "plannedIn": "map-sprint-01",
+      "blockoutTarget": "chunks/reed-shore.blockout.json"
+    },
+    { "id": "west-hill", "cell": "-1:-2", "name": "서쪽 야산", "places": ["mapo.west-hill"], "status": "reserved" },
+    { "id": "artisan-workshops", "cell": "-1:-1", "name": "장인 공방", "places": ["mapo.artisan-workshops"], "status": "reserved" },
+    { "id": "warehouses", "cell": "-1:0", "name": "물류 창고", "places": ["mapo.warehouses"], "status": "reserved" },
+    { "id": "riverside-yard", "cell": "-1:1", "name": "강변 짐터", "places": ["mapo.riverside-yard"], "status": "reserved" },
+    { "id": "fields", "cell": "1:-2", "name": "밭", "places": ["mapo.fields"], "status": "reserved" },
+    { "id": "rest-area", "cell": "1:-1", "name": "쉼터", "places": ["mapo.rest-area"], "status": "reserved" },
+    { "id": "jumak-street", "cell": "1:0", "name": "주막 거리", "places": ["mapo.jumak-street"], "status": "reserved" }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "format": "hangaram.public-asset-allowlist",
+  "version": 1,
+  "note": "공개 저장소에 올릴 수 있는 에셋 바이너리 목록. 항목마다 출처(source), 권리 근거(rights), 승인자(approvedBy)가 필요하다. 2026-10-22 납품 에셋 18종과 WorldForge KOREA GLB·글꼴은 권리 확인 전이므로 등록하지 않는다.",
+  "files": []
+}

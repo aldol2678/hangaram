@@ -1,0 +1,20 @@
+{
+  "format": "hangaram.places",
+  "version": 1,
+  "coordinateSystem": "hangaram.local/v1",
+  "note": "시대와 무관한 장소 ID와 공통 좌표 기준점. 기준점(anchor)은 게임용 도식 좌표이며 실측 위치가 아니다. 서쪽·동쪽 열의 셀 배정은 설계 요약의 나열 순서(북→남)를 따른 가배정이며 정본(Notion 설계 v0.1) 대조 전이다.",
+  "places": [
+    { "id": "mapo.forest-path", "name": "숲길", "cell": "0:-2", "anchor": [0, -128] },
+    { "id": "mapo.residential-lane", "name": "주거 골목", "cell": "0:-1", "anchor": [0, -64] },
+    { "id": "mapo.market", "name": "중심 시장", "cell": "0:0", "anchor": [0, 8] },
+    { "id": "mapo.naru", "name": "마포나루", "cell": "0:1", "anchor": [0, 40] },
+    { "id": "mapo.reed-shore", "name": "갈대 물가", "cell": "1:1", "anchor": [40, 40] },
+    { "id": "mapo.west-hill", "name": "서쪽 야산", "cell": "-1:-2", "anchor": [-64, -128] },
+    { "id": "mapo.artisan-workshops", "name": "장인 공방", "cell": "-1:-1", "anchor": [-64, -64] },
+    { "id": "mapo.warehouses", "name": "물류 창고", "cell": "-1:0", "anchor": [-64, 0] },
+    { "id": "mapo.riverside-yard", "name": "강변 짐터", "cell": "-1:1", "anchor": [-64, 40] },
+    { "id": "mapo.fields", "name": "밭", "cell": "1:-2", "anchor": [64, -128] },
+    { "id": "mapo.rest-area", "name": "쉼터", "cell": "1:-1", "anchor": [64, -64] },
+    { "id": "mapo.jumak-street", "name": "주막 거리", "cell": "1:0", "anchor": [64, 0] }
+  ]
+}

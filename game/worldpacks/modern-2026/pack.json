@@ -1,0 +1,23 @@
+{
+  "format": "hangaram.era-pack",
+  "version": 1,
+  "id": "modern-2026",
+  "label": "2026 마포 · 현대 (인터페이스 예약)",
+  "year": 2026,
+  "status": "reserved",
+  "coordinateSystem": "hangaram.local/v1",
+  "entityPrefix": "hg.m2026",
+  "disclaimer": "2026년 마포는 설계 전이다. 이 팩은 공통 장소 ID와 시대별 지형 분리 구조만 예약하며 구현된 구역이 없다.",
+  "terrain": {
+    "status": "reserved",
+    "groundY": 0,
+    "water": []
+  },
+  "chunks": [
+    { "id": "grove", "cell": "0:-2", "name": "숲길 자리 (2026 미설계)", "places": ["mapo.forest-path"], "status": "reserved" },
+    { "id": "lane", "cell": "0:-1", "name": "주거 골목 자리 (2026 미설계)", "places": ["mapo.residential-lane"], "status": "reserved" },
+    { "id": "market", "cell": "0:0", "name": "중심 시장 자리 (2026 미설계)", "places": ["mapo.market"], "status": "reserved" },
+    { "id": "naru", "cell": "0:1", "name": "마포나루 자리 (2026 미설계)", "places": ["mapo.naru"], "status": "reserved" },
+    { "id": "reed-shore", "cell": "1:1", "name": "갈대 물가 자리 (2026 미설계)", "places": ["mapo.reed-shore"], "status": "reserved" }
+  ]
+}
