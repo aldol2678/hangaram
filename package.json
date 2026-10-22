@@ -1,0 +1,27 @@
+{
+  "name": "hangaram",
+  "private": true,
+  "version": "0.0.1-m0",
+  "description": "한가람 M0 기반: 시대팩 인터페이스, 저장 마이그레이션, 모바일 입력 구조, 블록아웃 미리보기",
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "check:dist": "node scripts/check-dist.mjs",
+    "check:boundary": "node scripts/check-boundary.mjs",
+    "check:bridge": "node scripts/check-private-bridge.mjs",
+    "verify": "npm test && npm run check:boundary && npm run build && npm run check:dist",
+    "qa:browser": "node scripts/qa-browser.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "playcanvas": "2.22.4"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}
