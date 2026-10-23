@@ -1,0 +1,392 @@
+{
+  "format": "hangaram.blockout",
+  "version": 1,
+  "era": "modern-2026",
+  "chunk": "naru",
+  "note": "HG-02 original schematic primitives; not a surveyed reconstruction; no NPC or traffic.",
+  "primitives": [
+    {
+      "id": "hg.m2026.naru.ground",
+      "shape": "box",
+      "position": [
+        0,
+        -0.22,
+        64
+      ],
+      "size": [
+        64,
+        0.44,
+        64
+      ],
+      "color": "#a9b7ad",
+      "collision": "walkable"
+    },
+    {
+      "id": "hg.m2026.naru.promenade",
+      "shape": "box",
+      "position": [
+        0,
+        0.012,
+        64
+      ],
+      "size": [
+        6,
+        0.024,
+        64
+      ],
+      "color": "#d3d8d6",
+      "collision": "walkable"
+    },
+    {
+      "id": "hg.m2026.naru.crosswalk",
+      "shape": "box",
+      "position": [
+        0,
+        0.02,
+        48
+      ],
+      "size": [
+        50,
+        0.04,
+        5
+      ],
+      "color": "#bdc4c3",
+      "collision": "walkable"
+    },
+    {
+      "id": "hg.m2026.naru.pavilion",
+      "shape": "box",
+      "position": [
+        -18,
+        2,
+        60
+      ],
+      "size": [
+        10,
+        4,
+        8
+      ],
+      "color": "#648f9c",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.pavilion.glass",
+      "shape": "box",
+      "position": [
+        -18,
+        2,
+        64.05
+      ],
+      "size": [
+        8,
+        3,
+        0.1
+      ],
+      "color": "#a0dce2",
+      "collision": "none"
+    },
+    {
+      "id": "hg.m2026.naru.kiosk",
+      "shape": "box",
+      "position": [
+        10,
+        1.3,
+        44
+      ],
+      "size": [
+        3,
+        2.6,
+        3
+      ],
+      "color": "#246579",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.kiosk.screen",
+      "shape": "box",
+      "position": [
+        10,
+        1.5,
+        42.48
+      ],
+      "size": [
+        2,
+        1.4,
+        0.04
+      ],
+      "color": "#b8eff1",
+      "collision": "none"
+    },
+    {
+      "id": "hg.m2026.naru.bench.0",
+      "shape": "box",
+      "position": [
+        8,
+        0.5,
+        60
+      ],
+      "size": [
+        3,
+        1,
+        1
+      ],
+      "color": "#526a70",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.bench.1",
+      "shape": "box",
+      "position": [
+        -8,
+        0.5,
+        76
+      ],
+      "size": [
+        3,
+        1,
+        1
+      ],
+      "color": "#526a70",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.bench.2",
+      "shape": "box",
+      "position": [
+        18,
+        0.5,
+        78
+      ],
+      "size": [
+        3,
+        1,
+        1
+      ],
+      "color": "#526a70",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.lamp.0",
+      "shape": "box",
+      "position": [
+        -5,
+        2,
+        38
+      ],
+      "size": [
+        0.2,
+        4,
+        0.2
+      ],
+      "color": "#435561",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.lamp.light.0",
+      "shape": "box",
+      "position": [
+        -5,
+        4,
+        38
+      ],
+      "size": [
+        1,
+        0.2,
+        0.6
+      ],
+      "color": "#fff4b9",
+      "collision": "none"
+    },
+    {
+      "id": "hg.m2026.naru.lamp.1",
+      "shape": "box",
+      "position": [
+        5,
+        2,
+        54
+      ],
+      "size": [
+        0.2,
+        4,
+        0.2
+      ],
+      "color": "#435561",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.lamp.light.1",
+      "shape": "box",
+      "position": [
+        5,
+        4,
+        54
+      ],
+      "size": [
+        1,
+        0.2,
+        0.6
+      ],
+      "color": "#fff4b9",
+      "collision": "none"
+    },
+    {
+      "id": "hg.m2026.naru.lamp.2",
+      "shape": "box",
+      "position": [
+        -5,
+        2,
+        70
+      ],
+      "size": [
+        0.2,
+        4,
+        0.2
+      ],
+      "color": "#435561",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.lamp.light.2",
+      "shape": "box",
+      "position": [
+        -5,
+        4,
+        70
+      ],
+      "size": [
+        1,
+        0.2,
+        0.6
+      ],
+      "color": "#fff4b9",
+      "collision": "none"
+    },
+    {
+      "id": "hg.m2026.naru.lamp.3",
+      "shape": "box",
+      "position": [
+        5,
+        2,
+        86
+      ],
+      "size": [
+        0.2,
+        4,
+        0.2
+      ],
+      "color": "#435561",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.lamp.light.3",
+      "shape": "box",
+      "position": [
+        5,
+        4,
+        86
+      ],
+      "size": [
+        1,
+        0.2,
+        0.6
+      ],
+      "color": "#fff4b9",
+      "collision": "none"
+    },
+    {
+      "id": "hg.m2026.naru.planter.0",
+      "shape": "box",
+      "position": [
+        -20,
+        0.5,
+        88
+      ],
+      "size": [
+        4,
+        1,
+        2
+      ],
+      "color": "#527d60",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.planter.1",
+      "shape": "box",
+      "position": [
+        -10,
+        0.5,
+        88
+      ],
+      "size": [
+        4,
+        1,
+        2
+      ],
+      "color": "#527d60",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.planter.2",
+      "shape": "box",
+      "position": [
+        10,
+        0.5,
+        88
+      ],
+      "size": [
+        4,
+        1,
+        2
+      ],
+      "color": "#527d60",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.m2026.naru.planter.3",
+      "shape": "box",
+      "position": [
+        20,
+        0.5,
+        88
+      ],
+      "size": [
+        4,
+        1,
+        2
+      ],
+      "color": "#527d60",
+      "collision": "solid"
+    }
+  ],
+  "paths": [
+    {
+      "id": "hg.m2026.naru.path.main",
+      "width": 6,
+      "points": [
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          94
+        ]
+      ]
+    },
+    {
+      "id": "hg.m2026.naru.path.cross",
+      "width": 5,
+      "points": [
+        [
+          -25,
+          48
+        ],
+        [
+          25,
+          48
+        ]
+      ]
+    }
+  ],
+  "interactions": []
+}

@@ -33,10 +33,10 @@ test('출발 시대에 내용이 없는 장소에서는 전환할 수 없다 (�
   assert.ok(result.blockers.includes('E_SOURCE_PLACE_UNAVAILABLE'));
 });
 
-test('HG-01 이후 마포나루는 1792 출발지 내용이 있지만 2026 도착지와 전환 구현이 없어 막힌다', () => {
+test('HG-02 나루 내용은 있지만 어댑터 capability 없이는 계속 비활성이다', () => {
   const result = preflightTransition(registry, { save: createNewSave({ now }), toEra: 'modern-2026', placeId: 'mapo.naru' });
   assert.equal(result.blockers.includes('E_SOURCE_PLACE_UNAVAILABLE'), false);
-  assert.ok(result.blockers.includes('E_TARGET_PLACE_UNAVAILABLE'));
+  assert.equal(result.blockers.includes('E_TARGET_PLACE_UNAVAILABLE'), false);
   assert.ok(result.blockers.includes('E_TRANSITION_NOT_IMPLEMENTED'));
 });
 

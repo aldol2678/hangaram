@@ -11,10 +11,10 @@ const naruBlockout = await readWorldpackJson('joseon-1792/chunks/naru.blockout.j
 const blockouts = new Map([['naru', naruBlockout]]);
 const clone = (v) => structuredClone(v);
 
-test('저장소의 실제 장소·시대팩이 검증을 통과한다', () => {
+test('저장소의 실제 장소·시대팩이 검증을 통과한다', async () => {
   assert.deepEqual(validatePlaces(places), { ok: true, errors: [] });
   assert.deepEqual(validateEraPack(joseon, { places, blockouts }), { ok: true, errors: [] });
-  assert.deepEqual(validateEraPack(modern, { places, blockouts: new Map() }), { ok: true, errors: [] });
+  assert.deepEqual(validateEraPack(modern, { places, blockouts: new Map([['naru', await readWorldpackJson('modern-2026/chunks/naru.blockout.json')]]) }), { ok: true, errors: [] });
 });
 
 test('1792 팩: 기존 3, 마포나루 블록아웃 1, 갈대 물가 계획 1, 예약 7', () => {
@@ -27,15 +27,15 @@ test('1792 팩: 기존 3, 마포나루 블록아웃 1, 갈대 물가 계획 1, �
   assert.equal(joseon.chunks.find((c) => c.id === 'naru').blockout,'chunks/naru.blockout.json');
 });
 
-test('2026 팩은 예약 상태이며 내용·지형 기하가 없다', () => {
-  assert.equal(modern.status, 'reserved');
-  assert.ok(modern.chunks.every((c) => c.status === 'reserved'));
+test('2026 나루만 블록아웃이고 나머지 청크는 예약이다', () => {
+  assert.equal(modern.status, 'in-development');
+  assert.ok(modern.chunks.filter(c => c.id !== 'naru').every(c => c.status === 'reserved'));
   assert.deepEqual(modern.terrain.water, []);
-  const bad = clone(modern);
+  const bad = clone(modern); bad.status = 'reserved';
   bad.chunks[0].status = 'planned';
   bad.chunks[0].plannedIn = 'x';
   assert.match(validateEraPack(bad, { places }).errors.join('\n'), /reserved pack may only contain reserved chunks/);
-  const water = clone(modern);
+  const water = clone(modern); water.status = 'reserved';
   water.terrain.water.push({ id: 'hg.m2026.terrain.x', min: [0, 200], max: [10, 210], surfaceY: 0 });
   assert.match(validateEraPack(water, { places }).errors.join('\n'), /reserved pack must not ship terrain/);
 });

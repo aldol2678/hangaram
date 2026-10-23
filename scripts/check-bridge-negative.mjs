@@ -84,7 +84,7 @@ try {
 
 const bad = results.filter((r) => r.result !== 'PASS');
 const report = { check: 'hangaram-private-bridge-negative', koreaHead: head, result: bad.length ? 'FAIL' : 'PASS', cases: results };
-if (process.argv.includes('--write')) writeFileSync(path.join(root, 'qa/hg-01/bridge-negative-report.json'), `${JSON.stringify(report, null, 2)}\n`);
+if (process.argv.includes('--write')) writeFileSync(path.join(root, process.env.HG_BRIDGE_NEGATIVE_REPORT || 'qa/hg-01/bridge-negative-report.json'), `${JSON.stringify(report, null, 2)}\n`);
 for (const r of results) console.log(`${r.result}  ${r.case}  exit=${r.exit}  failed=[${r.observedFailures.join('; ')}]`);
 console.log(`bridge negative check ${report.result} · ${results.length - bad.length}/${results.length} cases behaved as expected · KOREA ${head}`);
 process.exit(bad.length ? 1 : 0);

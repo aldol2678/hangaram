@@ -1,4 +1,4 @@
-// 시대 전환 안전 상태. M0에서는 실제 전환을 구현하지 않는다 (ERA_TRANSITION_ENABLED = false).
+// Default remains disabled; HG-02 adapters opt into the verified mapo.naru location.
 // 여기 있는 것은 (1) 전환 전 사전 점검 규칙과 (2) 전환 도중 중단된 저장의 복구 규칙뿐이다.
 //
 // 단계: stable → preflight → committing → stable
@@ -10,6 +10,8 @@ export const ERA_TRANSITION_ENABLED = false;
 
 export const TRANSITION_BLOCKERS = Object.freeze({
   E_TRANSITION_NOT_IMPLEMENTED: '시대 전환은 아직 구현되지 않았어.',
+  E_POSITION_UNAVAILABLE: '검증된 나루 안에서만 전환할 수 있어.',
+  E_TARGET_BLOCKED: '다른 시대의 같은 위치가 막혀 있어. 이동한 뒤 다시 시도해 줘.',
   E_SAME_ERA: '이미 이 시대에 있어.',
   E_UNKNOWN_ERA: '알 수 없는 시대야.',
   E_UNKNOWN_PLACE: '알 수 없는 장소야.',
@@ -24,10 +26,12 @@ export const TRANSITION_BLOCKERS = Object.freeze({
  * @param {ReturnType<import('./registry.js').createEraRegistry>} registry
  * @param {{save: object, toEra: string, placeId: string, busy?: boolean}} request
  */
-export function preflightTransition(registry, { save, toEra, placeId, busy = false }) {
+export function preflightTransition(registry, { save, toEra, placeId, busy = false, capability = false }) {
   const blockers = [];
   const fromEra = save?.era?.current;
-  if (!ERA_TRANSITION_ENABLED) blockers.push('E_TRANSITION_NOT_IMPLEMENTED');
+  if (!ERA_TRANSITION_ENABLED && !(capability && placeId === 'mapo.naru')) blockers.push('E_TRANSITION_NOT_IMPLEMENTED');
+  const [x, z] = save?.player?.position ?? [];
+  if (capability && placeId === 'mapo.naru' && !(Number.isFinite(x) && Number.isFinite(z) && x >= -31.68 && x <= 31.68 && z >= 32.32 && z <= 95.68)) blockers.push('E_POSITION_UNAVAILABLE');
   if (save?.era?.transition) blockers.push('E_TRANSITION_IN_PROGRESS');
   if (busy) blockers.push('E_PLAYER_BUSY');
   const known = new Set(registry.eras);

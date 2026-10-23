@@ -32,11 +32,11 @@ test('worldforge-korea 능력이 있는 호스트에서는 기존 3청크가 적
   assert.deepEqual(session.descriptors.filter((d) => d.loadable).map((d) => d.chunkId).sort(), ['grove', 'lane', 'market', 'naru']);
 });
 
-test('2026 세션은 예약 셀 5개, 지형도 예약 상태', async () => {
+test('2026 세션은 나루 블록아웃 1개와 예약 셀 4개', async () => {
   const host = createNullHost({ capabilities: ['worldforge-korea'] });
   const session = await openEraSession({ registry, host, eraId: 'modern-2026' });
-  assert.deepEqual(session.summary, { total: 5, loadable: 0, byStatus: { reserved: 5 } });
-  assert.equal(host.snapshot().terrain.status, 'reserved');
+  assert.deepEqual(session.summary, { total: 5, loadable: 1, byStatus: { reserved: 4, blockout: 1 } });
+  assert.equal(host.snapshot().terrain.status, 'blockout');
 });
 
 test('미리보기 초점: 카메라 기준 이동, 북쪽=-z, 범위 제한', () => {
