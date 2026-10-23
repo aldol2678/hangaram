@@ -1,0 +1,549 @@
+
+> hangaram@0.0.1-m0 verify
+> npm test && npm run check:boundary && npm run build && npm run check:dist
+
+
+> hangaram@0.0.1-m0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: 엔진 호스트 계약은 필수 메서드와 capabilities를 강제한다
+ok 1 - 엔진 호스트 계약은 필수 메서드와 capabilities를 강제한다
+  ---
+  duration_ms: 2.58392
+  type: 'test'
+  ...
+# Subtest: 공개 호스트 세션: 12청크 서술자를 올리되 적재 가능한 내용은 블록아웃 1개
+ok 2 - 공개 호스트 세션: 12청크 서술자를 올리되 적재 가능한 내용은 블록아웃 1개
+  ---
+  duration_ms: 0.743894
+  type: 'test'
+  ...
+# Subtest: worldforge-korea 능력이 있는 호스트에서는 기존 3청크가 적재 가능해진다
+ok 3 - worldforge-korea 능력이 있는 호스트에서는 기존 3청크가 적재 가능해진다
+  ---
+  duration_ms: 0.33358
+  type: 'test'
+  ...
+# Subtest: 2026 세션은 나루 블록아웃 1개와 예약 셀 4개
+ok 4 - 2026 세션은 나루 블록아웃 1개와 예약 셀 4개
+  ---
+  duration_ms: 0.229664
+  type: 'test'
+  ...
+# Subtest: 미리보기 초점: 카메라 기준 이동, 북쪽=-z, 범위 제한
+ok 5 - 미리보기 초점: 카메라 기준 이동, 북쪽=-z, 범위 제한
+  ---
+  duration_ms: 0.337746
+  type: 'test'
+  ...
+# Subtest: 저장소의 실제 장소·시대팩이 검증을 통과한다
+ok 6 - 저장소의 실제 장소·시대팩이 검증을 통과한다
+  ---
+  duration_ms: 9.910093
+  type: 'test'
+  ...
+# Subtest: 1792 팩: 기존 3, 마포나루 블록아웃 1, 갈대 물가 계획 1, 예약 7
+ok 7 - 1792 팩: 기존 3, 마포나루 블록아웃 1, 갈대 물가 계획 1, 예약 7
+  ---
+  duration_ms: 0.329113
+  type: 'test'
+  ...
+# Subtest: 2026 나루만 블록아웃이고 나머지 청크는 예약이다
+ok 8 - 2026 나루만 블록아웃이고 나머지 청크는 예약이다
+  ---
+  duration_ms: 0.532478
+  type: 'test'
+  ...
+# Subtest: 시대별 지형은 팩마다 독립 객체다
+ok 9 - 시대별 지형은 팩마다 독립 객체다
+  ---
+  duration_ms: 0.302913
+  type: 'test'
+  ...
+# Subtest: 공통 좌표 규칙: 같은 장소는 모든 시대에서 같은 셀
+ok 10 - 공통 좌표 규칙: 같은 장소는 모든 시대에서 같은 셀
+  ---
+  duration_ms: 0.412919
+  type: 'test'
+  ...
+# Subtest: 구현 상태를 부풀리는 데이터는 거부한다
+ok 11 - 구현 상태를 부풀리는 데이터는 거부한다
+  ---
+  duration_ms: 0.42059
+  type: 'test'
+  ...
+# Subtest: legacy-reference는 출처 커밋을 고정해야 한다
+ok 12 - legacy-reference는 출처 커밋을 고정해야 한다
+  ---
+  duration_ms: 0.225668
+  type: 'test'
+  ...
+# Subtest: 청크·셀·장소 중복과 수면-육지 겹침을 거부한다
+ok 13 - 청크·셀·장소 중복과 수면-육지 겹침을 거부한다
+  ---
+  duration_ms: 0.423094
+  type: 'test'
+  ...
+# Subtest: 블록아웃 고정물(HG-01 형식 견본)이 검증을 통과한다
+ok 14 - 블록아웃 고정물(HG-01 형식 견본)이 검증을 통과한다
+  ---
+  duration_ms: 0.340099
+  type: 'test'
+  ...
+# Subtest: 블록아웃: ID 접두사, 청크 경계, 자리표시 상호작용, 예산을 강제한다
+ok 15 - 블록아웃: ID 접두사, 청크 경계, 자리표시 상호작용, 예산을 강제한다
+  ---
+  duration_ms: 1.670452
+  type: 'test'
+  ...
+# Subtest: HG-01 contract: original three chunks plus fourth naru pass
+ok 16 - HG-01 contract: original three chunks plus fourth naru pass
+  ---
+  duration_ms: 1.393888
+  type: 'test'
+  ...
+# Subtest: HG-01 contract: modified naru URI fails without rejecting unchanged legacy
+ok 17 - HG-01 contract: modified naru URI fails without rejecting unchanged legacy
+  ---
+  duration_ms: 0.238207
+  type: 'test'
+  ...
+# Subtest: HG-01 contract: occupied planned cell and extra hg- chunk rejected
+ok 18 - HG-01 contract: occupied planned cell and extra hg- chunk rejected
+  ---
+  duration_ms: 0.251457
+  type: 'test'
+  ...
+# Subtest: HG-01 contract: old or missing naru rejected
+ok 19 - HG-01 contract: old or missing naru rejected
+  ---
+  duration_ms: 0.194531
+  type: 'test'
+  ...
+# Subtest: HG-01 provenance: matching bytes, Git blob, commit and bounds pass
+ok 20 - HG-01 provenance: matching bytes, Git blob, commit and bounds pass
+  ---
+  duration_ms: 0.363825
+  type: 'test'
+  ...
+# Subtest: HG-01 provenance: tampered vendor and wrong commit fail
+ok 21 - HG-01 provenance: tampered vendor and wrong commit fail
+  ---
+  duration_ms: 0.274852
+  type: 'test'
+  ...
+# Subtest: HG-01 provenance: wrong blob SHA and invalid world bounds fail
+ok 22 - HG-01 provenance: wrong blob SHA and invalid world bounds fail
+  ---
+  duration_ms: 0.214721
+  type: 'test'
+  ...
+# Subtest: HG-01 A1: 공개 블록아웃 형식, 좌표, 고유 ID 및 예산
+ok 23 - HG-01 A1: 공개 블록아웃 형식, 좌표, 고유 ID 및 예산
+  ---
+  duration_ms: 2.175559
+  type: 'test'
+  ...
+# Subtest: HG-01 A2: 시장 6m 도로와 x=0, z=32 끊김 없이 연결
+ok 24 - HG-01 A2: 시장 6m 도로와 x=0, z=32 끊김 없이 연결
+  ---
+  duration_ms: 0.737214
+  type: 'test'
+  ...
+# Subtest: HG-01 A3: 0.5m 격자에서 선착장·짐·대기자리 도달
+ok 25 - HG-01 A3: 0.5m 격자에서 선착장·짐·대기자리 도달
+  ---
+  duration_ms: 36.78012
+  type: 'test'
+  ...
+# Subtest: HG-01 A4: 상호작용 자리표시 모두 도달 가능
+ok 26 - HG-01 A4: 상호작용 자리표시 모두 도달 가능
+  ---
+  duration_ms: 65.303614
+  type: 'test'
+  ...
+# Subtest: HG-01 A5: 강변 수면은 장식 영역, 독립 연속 수면은 z>=96
+ok 27 - HG-01 A5: 강변 수면은 장식 영역, 독립 연속 수면은 z>=96
+  ---
+  duration_ms: 0.30694
+  type: 'test'
+  ...
+# Subtest: HG-01 A6: 미리보기용 엔진 호스트에 나루만 공개 로드
+ok 28 - HG-01 A6: 미리보기용 엔진 호스트에 나루만 공개 로드
+  ---
+  duration_ms: 0.514691
+  type: 'test'
+  ...
+# Subtest: HG02 two round trips preserve exact coordinates and progress
+ok 29 - HG02 two round trips preserve exact coordinates and progress
+  ---
+  duration_ms: 3.479252
+  type: 'test'
+  ...
+# Subtest: HG02 rollback on checkpoint
+ok 30 - HG02 rollback on checkpoint
+  ---
+  duration_ms: 0.583404
+  type: 'test'
+  ...
+# Subtest: HG02 rollback on commit
+ok 31 - HG02 rollback on commit
+  ---
+  duration_ms: 0.402053
+  type: 'test'
+  ...
+# Subtest: HG02 rollback on load
+ok 32 - HG02 rollback on load
+  ---
+  duration_ms: 0.304005
+  type: 'test'
+  ...
+# Subtest: HG02 rollback on activation
+ok 33 - HG02 rollback on activation
+  ---
+  duration_ms: 0.356163
+  type: 'test'
+  ...
+# Subtest: HG02 obstacle refuses without moving or writing
+ok 34 - HG02 obstacle refuses without moving or writing
+  ---
+  duration_ms: 0.326248
+  type: 'test'
+  ...
+# Subtest: HG02 concurrent input refused; interrupted durable checkpoint recovers
+ok 35 - HG02 concurrent input refused; interrupted durable checkpoint recovers
+  ---
+  duration_ms: 9.457365
+  type: 'test'
+  ...
+# Subtest: HG02 busy, unavailable place and wrong coordinates refuse
+ok 36 - HG02 busy, unavailable place and wrong coordinates refuse
+  ---
+  duration_ms: 0.374101
+  type: 'test'
+  ...
+# Subtest: HG02 candidate storage accesses only isolated key; reload retains era
+ok 37 - HG02 candidate storage accesses only isolated key; reload retains era
+  ---
+  duration_ms: 0.656023
+  type: 'test'
+  ...
+# Subtest: HG02 modern blockout paths and historical primitives preserved
+ok 38 - HG02 modern blockout paths and historical primitives preserved
+  ---
+  duration_ms: 48.278512
+  type: 'test'
+  ...
+# Subtest: HG03 gates are era-specific and side rails close the authored corridor
+ok 39 - HG03 gates are era-specific and side rails close the authored corridor
+  ---
+  duration_ms: 0.794791
+  type: 'test'
+  ...
+# Subtest: HG03 real checkpoint progression requires correct era and order
+ok 40 - HG03 real checkpoint progression requires correct era and order
+  ---
+  duration_ms: 0.22042
+  type: 'test'
+  ...
+# Subtest: HG03 invalid or corrupt progress is clamped without escaping the flow
+ok 41 - HG03 invalid or corrupt progress is clamped without escaping the flow
+  ---
+  duration_ms: 0.264076
+  type: 'test'
+  ...
+# Subtest: HG03 finite corridor needs both times, but is reachable with two switches
+ok 42 - HG03 finite corridor needs both times, but is reachable with two switches
+  ---
+  duration_ms: 3.904338
+  type: 'test'
+  ...
+# Subtest: 스틱 벡터: 데드존, 크기 제한, 화면 위 = forward
+ok 43 - 스틱 벡터: 데드존, 크기 제한, 화면 위 = forward
+  ---
+  duration_ms: 2.028999
+  type: 'test'
+  ...
+# Subtest: 스틱 8방향 고정은 KOREA 스틱처럼 45° 단위로 맞춘다
+ok 44 - 스틱 8방향 고정은 KOREA 스틱처럼 45° 단위로 맞춘다
+  ---
+  duration_ms: 0.183105
+  type: 'test'
+  ...
+# Subtest: 키보드 배치는 기존 KOREA 조작과 같다
+ok 45 - 키보드 배치는 기존 KOREA 조작과 같다
+  ---
+  duration_ms: 0.175293
+  type: 'test'
+  ...
+# Subtest: 의도 버퍼: 엣지 입력은 한 번만 소비, 반복 키는 무시, 달리기는 토글
+ok 46 - 의도 버퍼: 엣지 입력은 한 번만 소비, 반복 키는 무시, 달리기는 토글
+  ---
+  duration_ms: 0.222293
+  type: 'test'
+  ...
+# Subtest: 의도 버퍼: 스틱이 키보드보다 우선하고 releaseAll은 달리기 토글을 유지한다
+ok 47 - 의도 버퍼: 스틱이 키보드보다 우선하고 releaseAll은 달리기 토글을 유지한다
+  ---
+  duration_ms: 0.261021
+  type: 'test'
+  ...
+# Subtest: 멀티터치: 스틱을 누른 채 두 번째 손가락의 점프·달리기가 pointerdown 즉시 동작한다
+ok 48 - 멀티터치: 스틱을 누른 채 두 번째 손가락의 점프·달리기가 pointerdown 즉시 동작한다
+  ---
+  duration_ms: 0.390225
+  type: 'test'
+  ...
+# Subtest: 멀티터치: 두 번째 포인터는 스틱을 빼앗지 않고, cancelAll은 모두 해제한다
+ok 49 - 멀티터치: 두 번째 포인터는 스틱을 빼앗지 않고, cancelAll은 모두 해제한다
+  ---
+  duration_ms: 0.370906
+  type: 'test'
+  ...
+# Subtest: 터치 배치 320x740: 44px 이상, 겹침 없음, safe-area 안
+ok 50 - 터치 배치 320x740: 44px 이상, 겹침 없음, safe-area 안
+  ---
+  duration_ms: 0.356014
+  type: 'test'
+  ...
+# Subtest: 터치 배치 390x844: 44px 이상, 겹침 없음, safe-area 안
+ok 51 - 터치 배치 390x844: 44px 이상, 겹침 없음, safe-area 안
+  ---
+  duration_ms: 0.422082
+  type: 'test'
+  ...
+# Subtest: 터치 배치 844x390: 44px 이상, 겹침 없음, safe-area 안
+ok 52 - 터치 배치 844x390: 44px 이상, 겹침 없음, safe-area 안
+  ---
+  duration_ms: 0.438387
+  type: 'test'
+  ...
+# Subtest: 터치 배치 1280x800: 44px 이상, 겹침 없음, safe-area 안
+ok 53 - 터치 배치 1280x800: 44px 이상, 겹침 없음, safe-area 안
+  ---
+  duration_ms: 0.164437
+  type: 'test'
+  ...
+# Subtest: 터치 배치 390x844 safe-area: 44px 이상, 겹침 없음, safe-area 안
+ok 54 - 터치 배치 390x844 safe-area: 44px 이상, 겹침 없음, safe-area 안
+  ---
+  duration_ms: 0.083034
+  type: 'test'
+  ...
+# Subtest: 터치 배치 844x390 safe-area: 44px 이상, 겹침 없음, safe-area 안
+ok 55 - 터치 배치 844x390 safe-area: 44px 이상, 겹침 없음, safe-area 안
+  ---
+  duration_ms: 0.26068
+  type: 'test'
+  ...
+# Subtest: 터치 배치 검증은 실제 위반을 잡아낸다
+ok 56 - 터치 배치 검증은 실제 위반을 잡아낸다
+  ---
+  duration_ms: 1.901558
+  type: 'test'
+  ...
+# Subtest: 레지스트리는 연도순 시대 목록과 기본 시대를 갖는다
+ok 57 - 레지스트리는 연도순 시대 목록과 기본 시대를 갖는다
+  ---
+  duration_ms: 1.051145
+  type: 'test'
+  ...
+# Subtest: 청크 서술자: 기존 3청크는 worldforge-korea 런타임이 있을 때만 적재 가능
+ok 58 - 청크 서술자: 기존 3청크는 worldforge-korea 런타임이 있을 때만 적재 가능
+  ---
+  duration_ms: 0.502062
+  type: 'test'
+  ...
+# Subtest: 장소 해석: 같은 장소 ID가 시대마다 같은 기준점을 쓰고, 내용 유무는 시대별로 다르다
+ok 59 - 장소 해석: 같은 장소 ID가 시대마다 같은 기준점을 쓰고, 내용 유무는 시대별로 다르다
+  ---
+  duration_ms: 0.483334
+  type: 'test'
+  ...
+# Subtest: 기존 3청크 재사용 경로: KOREA 카탈로그 형식으로 변환한 결과가 PR \#9 기록 좌표와 같다
+ok 60 - 기존 3청크 재사용 경로: KOREA 카탈로그 형식으로 변환한 결과가 PR \#9 기록 좌표와 같다
+  ---
+  duration_ms: 0.429212
+  type: 'test'
+  ...
+# Subtest: 신규 청크가 블록아웃이 되면 KOREA ID와 겹치지 않는 hg- 접두 ID로 변환된다
+ok 61 - 신규 청크가 블록아웃이 되면 KOREA ID와 겹치지 않는 hg- 접두 ID로 변환된다
+  ---
+  duration_ms: 10.887873
+  type: 'test'
+  ...
+# Subtest: 잘못된 팩은 레지스트리 생성 단계에서 막힌다
+ok 62 - 잘못된 팩은 레지스트리 생성 단계에서 막힌다
+  ---
+  duration_ms: 5.632277
+  type: 'test'
+  ...
+# Subtest: 새 저장은 v1 구조를 통과하고 기본 시대·위치를 쓴다
+ok 63 - 새 저장은 v1 구조를 통과하고 기본 시대·위치를 쓴다
+  ---
+  duration_ms: 1.70954
+  type: 'test'
+  ...
+# Subtest: 버전 판별: KOREA 레거시=0, 한가람=v, 그 외=null
+ok 64 - 버전 판별: KOREA 레거시=0, 한가람=v, 그 외=null
+  ---
+  duration_ms: 0.359338
+  type: 'test'
+  ...
+# Subtest: 마이그레이션 단계는 고유 ID와 연속 버전을 갖는다
+ok 65 - 마이그레이션 단계는 고유 ID와 연속 버전을 갖는다
+  ---
+  duration_ms: 0.202403
+  type: 'test'
+  ...
+# Subtest: m0001: KOREA 저장을 감싸며 원문·진행 ID·재화를 그대로 보존한다
+ok 66 - m0001: KOREA 저장을 감싸며 원문·진행 ID·재화를 그대로 보존한다
+  ---
+  duration_ms: 0.790474
+  type: 'test'
+  ...
+# Subtest: m0001: 형식이 틀린 값은 0/null로 두고 보고하며, 원문은 남는다
+ok 67 - m0001: 형식이 틀린 값은 0/null로 두고 보고하며, 원문은 남는다
+  ---
+  duration_ms: 0.531226
+  type: 'test'
+  ...
+# Subtest: v1 저장의 알 수 없는 최상위 필드는 지우지 않는다
+ok 68 - v1 저장의 알 수 없는 최상위 필드는 지우지 않는다
+  ---
+  duration_ms: 0.183795
+  type: 'test'
+  ...
+# Subtest: 미래 버전·알 수 없는 형식·구조 오류는 읽기 전용으로 거부한다
+ok 69 - 미래 버전·알 수 없는 형식·구조 오류는 읽기 전용으로 거부한다
+  ---
+  duration_ms: 0.377155
+  type: 'test'
+  ...
+# Subtest: 저장소: KOREA 레거시 키는 읽기만 하고 절대 쓰거나 지우지 않는다
+ok 70 - 저장소: KOREA 레거시 키는 읽기만 하고 절대 쓰거나 지우지 않는다
+  ---
+  duration_ms: 0.85446
+  type: 'test'
+  ...
+# Subtest: 저장소: 손상·미래 버전 저장은 덮어쓰지 않는다
+ok 71 - 저장소: 손상·미래 버전 저장은 덮어쓰지 않는다
+  ---
+  duration_ms: 0.378967
+  type: 'test'
+  ...
+# Subtest: 저장소: 한가람 키에 레거시 형식이 들어 있으면 원문을 백업한 뒤 한 번만 마이그레이션 기록한다
+ok 72 - 저장소: 한가람 키에 레거시 형식이 들어 있으면 원문을 백업한 뒤 한 번만 마이그레이션 기록한다
+  ---
+  duration_ms: 0.449503
+  type: 'test'
+  ...
+# Subtest: 저장소: 손상된 레거시는 무시하고 새 저장으로 시작하되 레거시를 남긴다
+ok 73 - 저장소: 손상된 레거시는 무시하고 새 저장으로 시작하되 레거시를 남긴다
+  ---
+  duration_ms: 0.191557
+  type: 'test'
+  ...
+# Subtest: 저장소 접근 예외(사생활 모드 등)에서도 실패를 돌려줄 뿐 던지지 않는다
+ok 74 - 저장소 접근 예외(사생활 모드 등)에서도 실패를 돌려줄 뿐 던지지 않는다
+  ---
+  duration_ms: 1.102351
+  type: 'test'
+  ...
+# Subtest: M0에서 시대 전환은 비활성이며 사전 점검이 항상 막는다
+ok 75 - M0에서 시대 전환은 비활성이며 사전 점검이 항상 막는다
+  ---
+  duration_ms: 2.217372
+  type: 'test'
+  ...
+# Subtest: 사전 점검은 이유를 모두 모은다: 같은 시대, 모르는 장소, 작업 중, 진행 중 전환
+ok 76 - 사전 점검은 이유를 모두 모은다: 같은 시대, 모르는 장소, 작업 중, 진행 중 전환
+  ---
+  duration_ms: 0.222924
+  type: 'test'
+  ...
+# Subtest: 출발 시대에 내용이 없는 장소에서는 전환할 수 없다 (갈대 물가는 아직 계획 단계)
+ok 77 - 출발 시대에 내용이 없는 장소에서는 전환할 수 없다 (갈대 물가는 아직 계획 단계)
+  ---
+  duration_ms: 0.119849
+  type: 'test'
+  ...
+# Subtest: HG-02 나루 내용은 있지만 어댑터 capability 없이는 계속 비활성이다
+ok 78 - HG-02 나루 내용은 있지만 어댑터 capability 없이는 계속 비활성이다
+  ---
+  duration_ms: 0.134501
+  type: 'test'
+  ...
+# Subtest: 중단된 전환은 체크포인트로 되돌리고 입력을 바꾸지 않는다
+ok 79 - 중단된 전환은 체크포인트로 되돌리고 입력을 바꾸지 않는다
+  ---
+  duration_ms: 0.843864
+  type: 'test'
+  ...
+# Subtest: 저장을 읽을 때 마이그레이션 파이프라인이 중단된 전환을 복구한다
+ok 80 - 저장을 읽을 때 마이그레이션 파이프라인이 중단된 전환을 복구한다
+  ---
+  duration_ms: 0.358357
+  type: 'test'
+  ...
+# Subtest: 공통 좌표계: 64m 청크, +x 동쪽 +z 남쪽, 실측 아님
+ok 81 - 공통 좌표계: 64m 청크, +x 동쪽 +z 남쪽, 실측 아님
+  ---
+  duration_ms: 0.996182
+  type: 'test'
+  ...
+# Subtest: 기존 3청크와 신규 2청크 셀 경계가 설계 좌표와 같다
+ok 82 - 기존 3청크와 신규 2청크 셀 경계가 설계 좌표와 같다
+  ---
+  duration_ms: 0.255923
+  type: 'test'
+  ...
+# Subtest: cellOf는 반열림 구간으로 경계를 동쪽·남쪽 셀에 배정한다
+ok 83 - cellOf는 반열림 구간으로 경계를 동쪽·남쪽 셀에 배정한다
+  ---
+  duration_ms: 0.154712
+  type: 'test'
+  ...
+# Subtest: 셀 키 파싱은 정규 표기만 허용한다
+ok 84 - 셀 키 파싱은 정규 표기만 허용한다
+  ---
+  duration_ms: 0.332828
+  type: 'test'
+  ...
+# Subtest: 인접 청크는 겹치지 않고, 경계 위 점은 양쪽에 포함된다
+ok 85 - 인접 청크는 겹치지 않고, 경계 위 점은 양쪽에 포함된다
+  ---
+  duration_ms: 0.317276
+  type: 'test'
+  ...
+# Subtest: 장소 ID 문법
+ok 86 - 장소 ID 문법
+  ---
+  duration_ms: 0.265608
+  type: 'test'
+  ...
+1..86
+# tests 86
+# suites 0
+# pass 86
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 326.871966
+
+> hangaram@0.0.1-m0 check:boundary
+> node scripts/check-boundary.mjs
+
+hangaram boundary check PASS · 109 files scanned · allowlisted assets 0
+
+> hangaram@0.0.1-m0 build
+> node scripts/build.mjs
+
+hangaram preview build OK · 10 files · app.js 1992739 bytes sha256 b8014319a6e842ca40ee0ae8aaf31c77f2df4438b5eb9184d43b8b6305545fcb
+
+> hangaram@0.0.1-m0 check:dist
+> node scripts/check-dist.mjs
+
+hangaram dist check PASS · 10 files · app.js 1992739 bytes sha256 b8014319a6e842ca40ee0ae8aaf31c77f2df4438b5eb9184d43b8b6305545fcb

@@ -1,0 +1,24 @@
+PASS  load chunk-catalog.js
+PASS  load economy.js
+PASS  load errands.js
+PASS  load life-quests.js
+PASS  source descends from pinned KOREA baseline
+PASS  legacy chunk catalog unchanged
+PASS  HG-01 blockout catalog exact
+PASS  planned and reserved slots remain unoccupied
+PASS  existing legacy IDs not reused by HG-01
+PASS  harvest IDs identical
+PASS  public naru blockout declared
+PASS  public and private HG-01 JSON bytes identical
+PASS  source repository and path match approved public blockout
+PASS  vendor Git blob SHA matches public data
+PASS  vendor source commit in public history
+PASS  WorldForge southern bounds support HG-01
+PASS  legacy save key identical
+PASS  legacy numeric fields covered
+PASS  errand ids identical
+PASS  life quest ids identical
+PASS  save round trip through hangaram v1 preserves KOREA state
+PASS  migrated progress keeps KOREA ids verbatim
+PASS  migrated position equals KOREA position
+private bridge check PASS · 23/23 · KOREA 196499a75419d4ccd1eaa033d458748057e8c899

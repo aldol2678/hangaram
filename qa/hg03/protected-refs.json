@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "before": [
+    "edfe44feb7c388cff5ad3f40a6a3af2dfc1d6ff6\trefs/heads/feat/hg01-mapo-naru-blockout-20261023",
+    "d52aa873e488bf4b4c517bb55477f600152bf972\trefs/heads/feat/hg02-era-playable-20261023",
+    "752e9b72bb531eeeb07dcf32530bb4682c608154\trefs/heads/main"
+  ],
+  "after": [
+    "edfe44feb7c388cff5ad3f40a6a3af2dfc1d6ff6\trefs/heads/feat/hg01-mapo-naru-blockout-20261023",
+    "d52aa873e488bf4b4c517bb55477f600152bf972\trefs/heads/feat/hg02-era-playable-20261023",
+    "752e9b72bb531eeeb07dcf32530bb4682c608154\trefs/heads/main"
+  ],
+  "scope": "main and HG01/HG02 branch refs unchanged"
+}

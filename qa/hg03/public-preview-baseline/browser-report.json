@@ -1,0 +1,422 @@
+{
+  "check": "hangaram-preview-browser-qa",
+  "scope": "Local Chromium headless, SwiftShader software WebGL2, device emulation. Not a physical-device or long-session test.",
+  "chromium": "154.0.8037.57",
+  "result": "FAIL",
+  "results": [
+    {
+      "viewport": "320x740",
+      "mobile": true,
+      "result": "FAIL",
+      "issues": [
+        "2026 pack shows non-reserved content",
+        "page error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "backend": "webgl2",
+      "isWebGL2": true,
+      "era": "joseon-1792",
+      "summary": {
+        "total": 12,
+        "loadable": 1,
+        "byStatus": {
+          "legacy-reference": 3,
+          "blockout": 1,
+          "planned": 1,
+          "reserved": 7
+        }
+      },
+      "modernSummary": {
+        "total": 5,
+        "loadable": 1,
+        "byStatus": {
+          "reserved": 4,
+          "blockout": 1
+        }
+      },
+      "input": {
+        "kind": "cdp-multitouch",
+        "moved": 31.971,
+        "activePointers": [
+          [
+            "stick down",
+            1
+          ],
+          [
+            "run down (stick held)",
+            2
+          ],
+          [
+            "run up (stick held)",
+            1
+          ],
+          [
+            "jump down (stick held)",
+            2
+          ],
+          [
+            "jump up (stick held)",
+            1
+          ],
+          [
+            "stick up",
+            0
+          ]
+        ],
+        "runToggled": true,
+        "jumpFeedbackShown": true,
+        "infoPanel": {
+          "open": true,
+          "hud": {
+            "x": 16,
+            "y": 16,
+            "width": 228,
+            "height": 337.40625
+          }
+        }
+      },
+      "layout": {
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "controlsVisible": true,
+        "hud": {
+          "x": 16,
+          "y": 16,
+          "width": 228,
+          "height": 168.890625
+        },
+        "items": [
+          {
+            "name": "stick",
+            "x": 16,
+            "y": 608,
+            "width": 108,
+            "height": 108
+          },
+          {
+            "name": "jump",
+            "x": 232,
+            "y": 644,
+            "width": 72,
+            "height": 72
+          },
+          {
+            "name": "run",
+            "x": 164,
+            "y": 660,
+            "width": 56,
+            "height": 56
+          },
+          {
+            "name": "interact",
+            "x": 240,
+            "y": 576,
+            "width": 56,
+            "height": 56
+          },
+          {
+            "name": "map",
+            "x": 256,
+            "y": 16,
+            "width": 48,
+            "height": 48
+          }
+        ],
+        "status": "PlayCanvas WEBGL2 · 블록아웃 미리보기 (게임 런타임 아님) · 저장 없음 · 미리보기는 저장하지 않음",
+        "focusLabel": "중심 시장 — 기존 KOREA 청크 · 비공개 런타임 필요"
+      },
+      "screenshot": "qa/hg03/public-preview-baseline/screens/320x740.png"
+    },
+    {
+      "viewport": "390x844",
+      "mobile": true,
+      "result": "FAIL",
+      "issues": [
+        "2026 pack shows non-reserved content"
+      ],
+      "backend": "webgl2",
+      "isWebGL2": true,
+      "era": "joseon-1792",
+      "summary": {
+        "total": 12,
+        "loadable": 1,
+        "byStatus": {
+          "legacy-reference": 3,
+          "blockout": 1,
+          "planned": 1,
+          "reserved": 7
+        }
+      },
+      "modernSummary": {
+        "total": 5,
+        "loadable": 1,
+        "byStatus": {
+          "reserved": 4,
+          "blockout": 1
+        }
+      },
+      "input": {
+        "kind": "cdp-multitouch",
+        "moved": 30.238,
+        "activePointers": [
+          [
+            "stick down",
+            1
+          ],
+          [
+            "run down (stick held)",
+            2
+          ],
+          [
+            "run up (stick held)",
+            1
+          ],
+          [
+            "jump down (stick held)",
+            2
+          ],
+          [
+            "jump up (stick held)",
+            1
+          ],
+          [
+            "stick up",
+            0
+          ]
+        ],
+        "runToggled": true,
+        "jumpFeedbackShown": true,
+        "infoPanel": {
+          "open": true,
+          "hud": {
+            "x": 16,
+            "y": 16,
+            "width": 298,
+            "height": 285.234375
+          }
+        }
+      },
+      "layout": {
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "controlsVisible": true,
+        "hud": {
+          "x": 16,
+          "y": 16,
+          "width": 298,
+          "height": 168.890625
+        },
+        "items": [
+          {
+            "name": "stick",
+            "x": 16,
+            "y": 688,
+            "width": 132,
+            "height": 132
+          },
+          {
+            "name": "jump",
+            "x": 294,
+            "y": 740,
+            "width": 80,
+            "height": 80
+          },
+          {
+            "name": "run",
+            "x": 222,
+            "y": 760,
+            "width": 60,
+            "height": 60
+          },
+          {
+            "name": "interact",
+            "x": 304,
+            "y": 668,
+            "width": 60,
+            "height": 60
+          },
+          {
+            "name": "map",
+            "x": 326,
+            "y": 16,
+            "width": 48,
+            "height": 48
+          }
+        ],
+        "status": "PlayCanvas WEBGL2 · 블록아웃 미리보기 (게임 런타임 아님) · 저장 없음 · 미리보기는 저장하지 않음",
+        "focusLabel": "중심 시장 — 기존 KOREA 청크 · 비공개 런타임 필요"
+      },
+      "screenshot": "qa/hg03/public-preview-baseline/screens/390x844.png"
+    },
+    {
+      "viewport": "844x390",
+      "mobile": true,
+      "result": "FAIL",
+      "issues": [
+        "2026 pack shows non-reserved content"
+      ],
+      "backend": "webgl2",
+      "isWebGL2": true,
+      "era": "joseon-1792",
+      "summary": {
+        "total": 12,
+        "loadable": 1,
+        "byStatus": {
+          "legacy-reference": 3,
+          "blockout": 1,
+          "planned": 1,
+          "reserved": 7
+        }
+      },
+      "modernSummary": {
+        "total": 5,
+        "loadable": 1,
+        "byStatus": {
+          "reserved": 4,
+          "blockout": 1
+        }
+      },
+      "input": {
+        "kind": "cdp-multitouch",
+        "moved": 32.449,
+        "activePointers": [
+          [
+            "stick down",
+            1
+          ],
+          [
+            "run down (stick held)",
+            2
+          ],
+          [
+            "run up (stick held)",
+            1
+          ],
+          [
+            "jump down (stick held)",
+            2
+          ],
+          [
+            "jump up (stick held)",
+            1
+          ],
+          [
+            "stick up",
+            0
+          ]
+        ],
+        "runToggled": true,
+        "jumpFeedbackShown": true,
+        "infoPanel": {
+          "open": true,
+          "hud": {
+            "x": 16,
+            "y": 16,
+            "width": 460,
+            "height": 210
+          }
+        }
+      },
+      "layout": {
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "controlsVisible": true,
+        "hud": {
+          "x": 16,
+          "y": 16,
+          "width": 460,
+          "height": 124.296875
+        },
+        "items": [
+          {
+            "name": "stick",
+            "x": 16,
+            "y": 242,
+            "width": 132,
+            "height": 132
+          },
+          {
+            "name": "jump",
+            "x": 748,
+            "y": 294,
+            "width": 80,
+            "height": 80
+          },
+          {
+            "name": "run",
+            "x": 676,
+            "y": 314,
+            "width": 60,
+            "height": 60
+          },
+          {
+            "name": "interact",
+            "x": 758,
+            "y": 222,
+            "width": 60,
+            "height": 60
+          },
+          {
+            "name": "map",
+            "x": 780,
+            "y": 16,
+            "width": 48,
+            "height": 48
+          }
+        ],
+        "status": "PlayCanvas WEBGL2 · 블록아웃 미리보기 (게임 런타임 아님) · 저장 없음 · 미리보기는 저장하지 않음",
+        "focusLabel": "중심 시장 — 기존 KOREA 청크 · 비공개 런타임 필요"
+      },
+      "screenshot": "qa/hg03/public-preview-baseline/screens/844x390.png"
+    },
+    {
+      "viewport": "1280x800",
+      "mobile": false,
+      "result": "FAIL",
+      "issues": [
+        "2026 pack shows non-reserved content"
+      ],
+      "backend": "webgl2",
+      "isWebGL2": true,
+      "era": "joseon-1792",
+      "summary": {
+        "total": 12,
+        "loadable": 1,
+        "byStatus": {
+          "legacy-reference": 3,
+          "blockout": 1,
+          "planned": 1,
+          "reserved": 7
+        }
+      },
+      "modernSummary": {
+        "total": 5,
+        "loadable": 1,
+        "byStatus": {
+          "reserved": 4,
+          "blockout": 1
+        }
+      },
+      "input": {
+        "kind": "keyboard",
+        "moved": 5.499,
+        "northward": true,
+        "overview": true
+      },
+      "layout": {
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "controlsVisible": false,
+        "hud": {
+          "x": 16,
+          "y": 16,
+          "width": 460,
+          "height": 244.640625
+        },
+        "items": [],
+        "status": "PlayCanvas WEBGL2 · 블록아웃 미리보기 (게임 런타임 아님) · 저장 없음 · 미리보기는 저장하지 않음",
+        "focusLabel": "중심 시장 — 기존 KOREA 청크 · 비공개 런타임 필요"
+      },
+      "screenshot": "qa/hg03/public-preview-baseline/screens/1280x800.png"
+    }
+  ]
+}

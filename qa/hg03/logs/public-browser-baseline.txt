@@ -1,0 +1,9 @@
+
+> hangaram@0.0.1-m0 qa:browser
+> node scripts/qa-browser.mjs
+
+FAIL  320x740  webgl2  2026 pack shows non-reserved content; page error: Failed to load resource: the server responded with a status of 404 (Not Found)
+FAIL  390x844  webgl2  2026 pack shows non-reserved content
+FAIL  844x390  webgl2  2026 pack shows non-reserved content
+FAIL  1280x800  webgl2  2026 pack shows non-reserved content
+browser QA FAIL
