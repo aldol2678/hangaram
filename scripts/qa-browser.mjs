@@ -172,10 +172,11 @@ try {
       if (!after.overview) issues.push('M did not toggle overview');
     }
 
-    // 2026 시대팩: 예약 셀만 있고 블록아웃이 없어야 한다.
+    // HG-02 introduced the authored modern naru; the other four cells stay reserved.
     await page.evaluate(() => window.__HANGARAM_PREVIEW__.setEra('modern-2026'));
     const modern = await page.evaluate(() => window.__HANGARAM_PREVIEW__.snapshot());
-    if (modern.chunks.some((c) => c.status !== 'reserved' || c.loadable)) issues.push('2026 pack shows non-reserved content');
+    if (modern.summary.total !== 5 || modern.summary.loadable !== 1 || modern.summary.byStatus.blockout !== 1 || modern.summary.byStatus.reserved !== 4) issues.push('2026 pack must contain one loadable naru and four reserved cells');
+    if (modern.chunks.some((c) => c.status === 'reserved' && c.loadable)) issues.push('reserved 2026 cell became loadable');
     await page.evaluate(() => window.__HANGARAM_PREVIEW__.setEra('joseon-1792'));
     await page.waitForTimeout(300);
 
