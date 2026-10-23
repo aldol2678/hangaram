@@ -1,0 +1,7 @@
+> node scripts/qa-browser.mjs
+
+PASS  320x740  webgl2  
+PASS  390x844  webgl2  
+PASS  844x390  webgl2  
+PASS  1280x800  webgl2  
+browser QA PASS

@@ -20,10 +20,10 @@ test('청크 서술자: 기존 3청크는 worldforge-korea 런타임이 있을 �
   assert.ok(legacy(publicHost).every((d) => d.source === 'worldforge-korea' && !d.loadable && /런타임 필요/.test(d.reason)));
   assert.ok(legacy(privateHost).every((d) => d.loadable && d.reason === null));
   const naru = publicHost.find((d) => d.chunkId === 'naru');
-  assert.equal(naru.loadable, false);
-  assert.equal(naru.source, 'none');
-  assert.equal(naru.reason, '미구현 (HG-01)');
-  assert.equal(naru.statusLabel, '계획됨 · 미구현');
+  assert.equal(naru.loadable, true);
+  assert.equal(naru.source, 'hangaram-blockout');
+  assert.equal(naru.reason, null);
+  assert.equal(naru.statusLabel, '블록아웃 (공개)');
   assert.deepEqual(naru.bounds, { min: [-32, 32], max: [32, 96] });
   assert.equal(naru.qualifiedId, 'joseon-1792:naru');
 });
@@ -34,7 +34,7 @@ test('장소 해석: 같은 장소 ID가 시대마다 같은 기준점을 쓰고
   assert.deepEqual(j.spawn, m.spawn);
   assert.equal(j.hasContent, true);
   assert.equal(m.hasContent, false);
-  assert.equal(registry.placeInEra('mapo.naru', 'joseon-1792').hasContent, false, '마포나루는 아직 계획 단계');
+  assert.equal(registry.placeInEra('mapo.naru', 'joseon-1792').hasContent, true, '마포나루 블록아웃 존재');
   assert.equal(registry.placeInEra('mapo.nowhere', 'joseon-1792'), null);
   assert.throws(() => registry.placeInEra('mapo.market', 'goryeo-1100'), /E_UNKNOWN_ERA/);
 });
@@ -65,7 +65,9 @@ test('잘못된 팩은 레지스트리 생성 단계에서 막힌다', async () 
   const pack = structuredClone(await readWorldpackJson('joseon-1792/pack.json'));
   pack.chunks[0].status = 'done';
   assert.throws(() => createEraRegistry({ places, packs: [{ pack }], defaultEra: 'joseon-1792' }), /E_ERA_PACK_INVALID/);
-  const good = await readWorldpackJson('joseon-1792/pack.json');
-  assert.throws(() => createEraRegistry({ places, packs: [{ pack: good }, { pack: good }], defaultEra: 'joseon-1792' }), /E_DUPLICATE_ERA/);
-  assert.throws(() => createEraRegistry({ places, packs: [{ pack: good }], defaultEra: 'modern-2026' }), /E_DEFAULT_ERA/);
+  // HG-01부터 1792 팩은 마포나루 블록아웃 문서가 있어야 유효하다. 문서를 함께 넘겨 중복·기본 시대 검사만 본다.
+  const good = { pack: await readWorldpackJson('joseon-1792/pack.json'), blockouts: new Map([['naru', await readWorldpackJson('joseon-1792/chunks/naru.blockout.json')]]) };
+  assert.doesNotThrow(() => createEraRegistry({ places, packs: [good], defaultEra: 'joseon-1792' }));
+  assert.throws(() => createEraRegistry({ places, packs: [good, good], defaultEra: 'joseon-1792' }), /E_DUPLICATE_ERA/);
+  assert.throws(() => createEraRegistry({ places, packs: [good], defaultEra: 'modern-2026' }), /E_DEFAULT_ERA/);
 });

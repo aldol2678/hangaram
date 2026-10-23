@@ -1,0 +1,845 @@
+{
+  "format": "hangaram.blockout",
+  "version": 1,
+  "era": "joseon-1792",
+  "chunk": "naru",
+  "note": "HG-01 지형·통행·상호작용 자리표시. 역사적 측량 복원이나 게임 런타임이 아님. 얕은 물/모래톱 Z84~96, 연속 수면 Z>=96. 3D 상호작용과 항해 미구현.",
+  "primitives": [
+    {
+      "id": "hg.j1792.naru.ground",
+      "shape": "box",
+      "position": [
+        0,
+        -0.22,
+        64
+      ],
+      "size": [
+        64,
+        0.44,
+        64
+      ],
+      "color": "#b4a27d",
+      "collision": "walkable"
+    },
+    {
+      "id": "hg.j1792.naru.road.main",
+      "shape": "box",
+      "position": [
+        0,
+        0.012,
+        49.5
+      ],
+      "size": [
+        6,
+        0.025,
+        35
+      ],
+      "color": "#bdae88",
+      "collision": "walkable"
+    },
+    {
+      "id": "hg.j1792.naru.road.dock",
+      "shape": "box",
+      "position": [
+        0,
+        0.035,
+        67
+      ],
+      "size": [
+        4,
+        0.06,
+        8
+      ],
+      "color": "#a99a77",
+      "collision": "walkable"
+    },
+    {
+      "id": "hg.j1792.naru.sandbar",
+      "shape": "box",
+      "position": [
+        0,
+        -0.03,
+        84
+      ],
+      "size": [
+        63,
+        0.06,
+        12
+      ],
+      "color": "#c3ae80",
+      "collision": "walkable"
+    },
+    {
+      "id": "hg.j1792.naru.water.shallow",
+      "shape": "box",
+      "position": [
+        0,
+        -0.1,
+        93
+      ],
+      "size": [
+        63,
+        0.06,
+        6
+      ],
+      "color": "#779ca4",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.dock.deck",
+      "shape": "box",
+      "position": [
+        0,
+        0.16,
+        78
+      ],
+      "size": [
+        4,
+        0.32,
+        22
+      ],
+      "color": "#806248",
+      "collision": "walkable"
+    },
+    {
+      "id": "hg.j1792.naru.dock.post.0.0",
+      "shape": "cylinder",
+      "position": [
+        -2.35,
+        0.6,
+        69
+      ],
+      "size": [
+        0.38,
+        1.2,
+        0.38
+      ],
+      "color": "#725439",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.dock.post.0.1",
+      "shape": "cylinder",
+      "position": [
+        2.35,
+        0.6,
+        69
+      ],
+      "size": [
+        0.38,
+        1.2,
+        0.38
+      ],
+      "color": "#725439",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.dock.post.1.0",
+      "shape": "cylinder",
+      "position": [
+        -2.35,
+        0.6,
+        76
+      ],
+      "size": [
+        0.38,
+        1.2,
+        0.38
+      ],
+      "color": "#725439",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.dock.post.1.1",
+      "shape": "cylinder",
+      "position": [
+        2.35,
+        0.6,
+        76
+      ],
+      "size": [
+        0.38,
+        1.2,
+        0.38
+      ],
+      "color": "#725439",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.dock.post.2.0",
+      "shape": "cylinder",
+      "position": [
+        -2.35,
+        0.6,
+        84
+      ],
+      "size": [
+        0.38,
+        1.2,
+        0.38
+      ],
+      "color": "#725439",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.dock.post.2.1",
+      "shape": "cylinder",
+      "position": [
+        2.35,
+        0.6,
+        84
+      ],
+      "size": [
+        0.38,
+        1.2,
+        0.38
+      ],
+      "color": "#725439",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.boat.hull.0",
+      "shape": "box",
+      "position": [
+        -14,
+        0.22,
+        87
+      ],
+      "size": [
+        7,
+        1,
+        8.5
+      ],
+      "color": "#665a47",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.boat.deck.0",
+      "shape": "box",
+      "position": [
+        -14,
+        0.72,
+        87
+      ],
+      "size": [
+        5.4,
+        0.12,
+        7
+      ],
+      "color": "#947654",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.boat.hull.1",
+      "shape": "box",
+      "position": [
+        15,
+        0.22,
+        87
+      ],
+      "size": [
+        7,
+        1,
+        8.5
+      ],
+      "color": "#665a47",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.boat.deck.1",
+      "shape": "box",
+      "position": [
+        15,
+        0.72,
+        87
+      ],
+      "size": [
+        5.4,
+        0.12,
+        7
+      ],
+      "color": "#947654",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.cargo.stack.0",
+      "shape": "box",
+      "position": [
+        -12,
+        0.7,
+        58
+      ],
+      "size": [
+        2.2,
+        1.4,
+        2
+      ],
+      "color": "#9a7956",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.cargo.top.0",
+      "shape": "box",
+      "position": [
+        -12,
+        1.45,
+        58
+      ],
+      "size": [
+        2.3,
+        0.1,
+        2.2
+      ],
+      "color": "#c6a37a",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.cargo.stack.1",
+      "shape": "box",
+      "position": [
+        12,
+        0.7,
+        58
+      ],
+      "size": [
+        2.2,
+        1.4,
+        2
+      ],
+      "color": "#9a7956",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.cargo.top.1",
+      "shape": "box",
+      "position": [
+        12,
+        1.45,
+        58
+      ],
+      "size": [
+        2.3,
+        0.1,
+        2.2
+      ],
+      "color": "#c6a37a",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.cargo.stack.2",
+      "shape": "box",
+      "position": [
+        -12,
+        0.7,
+        69
+      ],
+      "size": [
+        2.2,
+        1.4,
+        2
+      ],
+      "color": "#9a7956",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.cargo.top.2",
+      "shape": "box",
+      "position": [
+        -12,
+        1.45,
+        69
+      ],
+      "size": [
+        2.3,
+        0.1,
+        2.2
+      ],
+      "color": "#c6a37a",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.waiting.shelter",
+      "shape": "box",
+      "position": [
+        19,
+        1.65,
+        58
+      ],
+      "size": [
+        8,
+        0.25,
+        5
+      ],
+      "color": "#8b7051",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.shelter.post.15.5.56",
+      "shape": "box",
+      "position": [
+        15.5,
+        0.75,
+        56
+      ],
+      "size": [
+        0.3,
+        1.5,
+        0.3
+      ],
+      "color": "#806544",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.shelter.post.15.5.60",
+      "shape": "box",
+      "position": [
+        15.5,
+        0.75,
+        60
+      ],
+      "size": [
+        0.3,
+        1.5,
+        0.3
+      ],
+      "color": "#806544",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.shelter.post.22.5.56",
+      "shape": "box",
+      "position": [
+        22.5,
+        0.75,
+        56
+      ],
+      "size": [
+        0.3,
+        1.5,
+        0.3
+      ],
+      "color": "#806544",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.shelter.post.22.5.60",
+      "shape": "box",
+      "position": [
+        22.5,
+        0.75,
+        60
+      ],
+      "size": [
+        0.3,
+        1.5,
+        0.3
+      ],
+      "color": "#806544",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.0",
+      "shape": "cylinder",
+      "position": [
+        -24,
+        0.35,
+        75
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.1",
+      "shape": "cylinder",
+      "position": [
+        25.9,
+        0.35,
+        75
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.2",
+      "shape": "cylinder",
+      "position": [
+        -27.8,
+        0.35,
+        77.3
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.3",
+      "shape": "cylinder",
+      "position": [
+        24,
+        0.35,
+        77.3
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.4",
+      "shape": "cylinder",
+      "position": [
+        -25.9,
+        0.35,
+        79.6
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.5",
+      "shape": "cylinder",
+      "position": [
+        27.8,
+        0.35,
+        79.6
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.6",
+      "shape": "cylinder",
+      "position": [
+        -24,
+        0.35,
+        81.9
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.7",
+      "shape": "cylinder",
+      "position": [
+        25.9,
+        0.35,
+        81.9
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.8",
+      "shape": "cylinder",
+      "position": [
+        -27.8,
+        0.35,
+        84.2
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.9",
+      "shape": "cylinder",
+      "position": [
+        24,
+        0.35,
+        84.2
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.10",
+      "shape": "cylinder",
+      "position": [
+        -25.9,
+        0.35,
+        86.5
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.11",
+      "shape": "cylinder",
+      "position": [
+        27.8,
+        0.35,
+        86.5
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.12",
+      "shape": "cylinder",
+      "position": [
+        -24,
+        0.35,
+        88.8
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.reeds.13",
+      "shape": "cylinder",
+      "position": [
+        25.9,
+        0.35,
+        88.8
+      ],
+      "size": [
+        0.16,
+        0.7,
+        0.16
+      ],
+      "color": "#7d8a54",
+      "collision": "none"
+    },
+    {
+      "id": "hg.j1792.naru.rock.0",
+      "shape": "box",
+      "position": [
+        -20,
+        0.15,
+        53
+      ],
+      "size": [
+        2,
+        0.3,
+        1.5
+      ],
+      "color": "#898276",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.rock.1",
+      "shape": "box",
+      "position": [
+        22,
+        0.15,
+        70
+      ],
+      "size": [
+        2,
+        0.3,
+        1.5
+      ],
+      "color": "#898276",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.rock.2",
+      "shape": "box",
+      "position": [
+        -24,
+        0.15,
+        72
+      ],
+      "size": [
+        2,
+        0.3,
+        1.5
+      ],
+      "color": "#898276",
+      "collision": "solid"
+    },
+    {
+      "id": "hg.j1792.naru.rock.3",
+      "shape": "box",
+      "position": [
+        23,
+        0.15,
+        49
+      ],
+      "size": [
+        2,
+        0.3,
+        1.5
+      ],
+      "color": "#898276",
+      "collision": "solid"
+    }
+  ],
+  "paths": [
+    {
+      "id": "hg.j1792.naru.path.market-road",
+      "points": [
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          49
+        ],
+        [
+          0,
+          67
+        ]
+      ],
+      "width": 6
+    },
+    {
+      "id": "hg.j1792.naru.path.dock",
+      "points": [
+        [
+          0,
+          67
+        ],
+        [
+          0,
+          76
+        ],
+        [
+          0,
+          88
+        ]
+      ],
+      "width": 3.4
+    },
+    {
+      "id": "hg.j1792.naru.path.cargo-east",
+      "points": [
+        [
+          0,
+          56
+        ],
+        [
+          7,
+          56
+        ],
+        [
+          7,
+          62
+        ]
+      ],
+      "width": 3
+    },
+    {
+      "id": "hg.j1792.naru.path.cargo-west",
+      "points": [
+        [
+          0,
+          57
+        ],
+        [
+          -7,
+          57
+        ],
+        [
+          -7,
+          63
+        ]
+      ],
+      "width": 3
+    }
+  ],
+  "interactions": [
+    {
+      "id": "hg.j1792.naru.spot.cargo",
+      "kind": "cargo-pile",
+      "position": [
+        -8,
+        60
+      ],
+      "radius": 2.4,
+      "placeholder": true
+    },
+    {
+      "id": "hg.j1792.naru.spot.deliver",
+      "kind": "market-delivery",
+      "position": [
+        7,
+        60
+      ],
+      "radius": 2.4,
+      "placeholder": true
+    },
+    {
+      "id": "hg.j1792.naru.spot.porter",
+      "kind": "porter-station",
+      "position": [
+        19,
+        63
+      ],
+      "radius": 2.6,
+      "placeholder": true
+    },
+    {
+      "id": "hg.j1792.naru.spot.mooring",
+      "kind": "mooring-area",
+      "position": [
+        0,
+        84
+      ],
+      "radius": 2.5,
+      "placeholder": true
+    }
+  ]
+}

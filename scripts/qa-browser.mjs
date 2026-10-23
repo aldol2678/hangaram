@@ -8,7 +8,9 @@ import { fileURLToPath } from 'node:url';
 import { startServer } from './serve.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const outDir = path.join(root, 'qa/m0');
+// QA_OUT으로 결과 폴더를 바꿀 수 있다 (기본 qa/m0). 이전 단계 기록을 덮어쓰지 않기 위함.
+const outRel = (process.env.QA_OUT ?? 'qa/m0').replace(/\/+$/, '');
+const outDir = path.join(root, outRel);
 
 async function resolvePlaywright() {
   try {
@@ -177,7 +179,7 @@ try {
     await page.evaluate(() => window.__HANGARAM_PREVIEW__.setEra('joseon-1792'));
     await page.waitForTimeout(300);
 
-    const screenshot = `qa/m0/screens/${vp.name}.png`;
+    const screenshot = `${outRel}/screens/${vp.name}.png`;
     await page.screenshot({ path: path.join(root, screenshot) });
     if (errors.length) issues.push(...errors.map((e) => `page error: ${e}`));
     if (failedRequests.length) issues.push(...failedRequests.map((r) => `request failed: ${r}`));

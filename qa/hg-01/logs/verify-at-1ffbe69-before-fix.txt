@@ -1,0 +1,21 @@
+not ok 48 - 잘못된 팩은 레지스트리 생성 단계에서 막힌다
+not ok 63 - 출발 시대에 내용이 없는 장소에서는 전환할 수 없다 (마포나루는 아직 계획 단계)
+# tests 71
+# suites 0
+# pass 69
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+  duration_ms: 0.222685
+  type: 'test'
+  ...
+1..71
+# tests 71
+# suites 0
+# pass 69
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 327.668469

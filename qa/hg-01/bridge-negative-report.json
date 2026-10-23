@@ -1,0 +1,208 @@
+{
+  "check": "hangaram-private-bridge-negative",
+  "koreaHead": "5d215b325e22480f23f0a6aaaf555524d596e280",
+  "result": "PASS",
+  "cases": [
+    {
+      "case": "control-unmodified",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 0,
+      "expectedFailures": [],
+      "observedFailures": [],
+      "result": "PASS"
+    },
+    {
+      "case": "wrong-naru-uri",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "HG-01 blockout catalog exact"
+      ],
+      "observedFailures": [
+        "HG-01 blockout catalog exact"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "moved-naru-bounds",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "HG-01 blockout catalog exact"
+      ],
+      "observedFailures": [
+        "HG-01 blockout catalog exact"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "legacy-market-uri-changed",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "legacy chunk catalog unchanged"
+      ],
+      "observedFailures": [
+        "legacy chunk catalog unchanged"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "reserved-cell-occupied",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "planned and reserved slots remain unoccupied",
+        "HG-01 blockout catalog exact"
+      ],
+      "observedFailures": [
+        "HG-01 blockout catalog exact",
+        "planned and reserved slots remain unoccupied"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "tampered-vendor-blockout",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "public and private HG-01 JSON bytes identical"
+      ],
+      "observedFailures": [
+        "public and private HG-01 JSON bytes identical"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "forged-blob-sha",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "vendor Git blob SHA matches public data"
+      ],
+      "observedFailures": [
+        "vendor Git blob SHA matches public data"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "unknown-source-commit",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "vendor source commit in public history"
+      ],
+      "observedFailures": [
+        "vendor source commit in public history"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "wrong-source-repository",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "source repository and path match approved public blockout"
+      ],
+      "observedFailures": [
+        "source repository and path match approved public blockout"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "world-bounds-not-extended",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "WorldForge southern bounds support HG-01"
+      ],
+      "observedFailures": [
+        "WorldForge southern bounds support HG-01"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "save-key-changed",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "legacy save key identical"
+      ],
+      "observedFailures": [
+        "legacy save key identical"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "errand-id-renamed",
+      "side": "private",
+      "commit": "5d215b325e22",
+      "exit": 1,
+      "expectedFailures": [
+        "errand ids identical"
+      ],
+      "observedFailures": [
+        "errand ids identical"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "wrong-commit-pr9-without-hg01",
+      "side": "private",
+      "commit": "cb4d077702de",
+      "exit": 1,
+      "expectedFailures": [
+        "HG-01 blockout catalog exact",
+        "HG-01 vendor source available and parseable"
+      ],
+      "observedFailures": [
+        "HG-01 blockout catalog exact",
+        "HG-01 vendor source available and parseable"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "wrong-commit-alpha04-not-descendant",
+      "side": "private",
+      "commit": "f322abea24c3",
+      "exit": 1,
+      "expectedFailures": [
+        "source descends from pinned KOREA baseline",
+        "load life-quests.js"
+      ],
+      "observedFailures": [
+        "load life-quests.js",
+        "source descends from pinned KOREA baseline",
+        "HG-01 blockout catalog exact",
+        "HG-01 vendor source available and parseable"
+      ],
+      "result": "PASS"
+    },
+    {
+      "case": "tampered-public-blockout",
+      "side": "public",
+      "commit": "42f21c8a971e",
+      "exit": 1,
+      "expectedFailures": [
+        "public and private HG-01 JSON bytes identical",
+        "vendor Git blob SHA matches public data"
+      ],
+      "observedFailures": [
+        "public and private HG-01 JSON bytes identical",
+        "vendor Git blob SHA matches public data"
+      ],
+      "result": "PASS"
+    }
+  ]
+}

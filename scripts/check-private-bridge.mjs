@@ -8,6 +8,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { boundsOverlap, boundsOfCellKey } from '../game/src/core/world-grid.js';
+import { catalogChecks, hg01VendorChecks } from '../game/src/engine/hg01-bridge-contract.js';
 import { toWorldForgeChunkCatalog } from '../game/src/engine/worldforge-catalog.js';
 import { INVENTORY_KEYS, LEGACY_KOREA_KEY, PROGRESS_KEYS } from '../game/src/save/format.js';
 import { migrateSave } from '../game/src/save/migrations.js';
@@ -51,19 +52,54 @@ const economy = await tryLoad('economy.js');
 const errands = await tryLoad('errands.js');
 const life = await tryLoad('life-quests.js');
 const sameIds = (a, b) => JSON.stringify([...a].sort()) === JSON.stringify([...b].sort());
+const hg01Requested = pack.chunks.some((chunk) => chunk.status === 'blockout') && !args.has('--baseline-only');
+const repoRoot = path.resolve(root);
+function isAncestor(base, cwd) {
+  if (typeof base !== 'string' || !/^[a-f0-9]{40}$/.test(base)) return false;
+  try {
+    execFileSync('git', ['merge-base', '--is-ancestor', base, 'HEAD'], { cwd, stdio: 'ignore' });
+    return true;
+  } catch {
+    return false;
+  }
+}
 
-check('source commit matches pack legacy commit', commit === pack.legacyIds.commit, { expected: pack.legacyIds.commit, actual: commit });
+check('source descends from pinned KOREA baseline', isAncestor(pack.legacyIds.commit, dir),
+  { pinnedBaseline: pack.legacyIds.commit, actual: commit });
 
 if (catalogModule) {
-  const ours = toWorldForgeChunkCatalog(pack, { statuses: ['legacy-reference'] });
-  const theirs = catalogModule.CHUNKS.map(({ id, min, max, uri }) => ({ id, min, max, uri }));
-  const key = (c) => JSON.stringify([c.id, c.min, c.max, c.uri]);
-  check('legacy chunk catalog (id/min/max/uri) identical', JSON.stringify(ours.map(key).sort()) === JSON.stringify(theirs.map(key).sort()), { hangaram: ours.map(({ id, min, max, uri }) => ({ id, min, max, uri })), korea: theirs });
-  const overlaps = pack.chunks
-    .filter((c) => c.status !== 'legacy-reference')
-    .flatMap((chunk) => catalogModule.CHUNKS.filter((c) => boundsOverlap(boundsOfCellKey(chunk.cell), { min: c.min, max: c.max })).map((c) => `${chunk.id}->${c.id}`));
-  check('planned/reserved slots do not overlap KOREA chunks', overlaps.length === 0, { overlaps });
-  check('harvest ids identical', sameIds(pack.legacyIds.harvest, catalogModule.HARVESTS.map((h) => h.id)), { korea: catalogModule.HARVESTS.map((h) => h.id) });
+  const legacy = toWorldForgeChunkCatalog(pack, { statuses: ['legacy-reference'] });
+  const blockout = hg01Requested ? toWorldForgeChunkCatalog(pack, { statuses: ['blockout'] }) : [];
+  // A baseline-only read deliberately ignores HG-01 to compare PR #9 without changing it.
+  const privateChunks = hg01Requested
+    ? catalogModule.CHUNKS
+    : catalogModule.CHUNKS.filter((chunk) => !chunk.id.startsWith('hg-'));
+  checks.push(...catalogChecks({
+    pack, legacyCatalog: legacy, blockoutCatalog: blockout, privateCatalog: privateChunks,
+    boundsOfCellKey, boundsOverlap,
+  }));
+  check('harvest IDs identical', sameIds(pack.legacyIds.harvest,
+    catalogModule.HARVESTS.map((h) => h.id)),
+    { korea: catalogModule.HARVESTS.map((h) => h.id) });
+
+  if (hg01Requested) {
+    try {
+      const sourcePath = path.join(root, 'game/worldpacks/joseon-1792/chunks/naru.blockout.json');
+      const vendorPath = path.join(dir, 'vendor/hangaram/naru.blockout.json');
+      const metadataPath = path.join(dir, 'vendor/hangaram/SOURCE.json');
+      const [publicBytes, vendorBytes, provenanceBytes] = await Promise.all([
+        readFile(sourcePath), readFile(vendorPath), readFile(metadataPath),
+      ]);
+      const provenance = JSON.parse(provenanceBytes);
+      checks.push(...hg01VendorChecks({
+        pack, publicBytes, vendorBytes, provenance,
+        privateWorldBounds: catalogModule.WORLD_BOUNDS,
+        isSourceCommitAncestor: isAncestor(provenance.sourceCommit, repoRoot),
+      }));
+    } catch (error) {
+      check('HG-01 vendor source available and parseable', false, { error: error.code ?? String(error) });
+    }
+  }
 }
 if (economy) {
   check('legacy save key identical', economy.STORAGE_KEY === LEGACY_KOREA_KEY, { hangaram: LEGACY_KOREA_KEY, korea: economy.STORAGE_KEY });
@@ -91,11 +127,15 @@ if (economy) {
 
 const info = {
   koreaWorldBounds: catalogModule?.WORLD_BOUNDS ?? null,
-  note: 'KOREA WORLD_BOUNDS.maxZ가 30.5이므로 마포나루(Z 32~96)를 실제 런타임에 올리려면 HG-01에서 WORLD_BOUNDS·충돌·경계 이동 차단을 함께 확장해야 한다.',
+  note: 'HG-01 KOREA 월드 경계·원본 청크·벤더 파일을 코드 계약으로 검사한다. 실제 브라우저 이동/Android 실기기는 별도 QA 대상이다.',
 };
 const failed = checks.filter((c) => c.result === 'FAIL');
-const report = { check: 'hangaram-private-bridge', koreaDir: 'WORLDFORGE_KOREA_DIR (local, not published)', koreaCommit: commit, result: failed.length ? 'FAIL' : 'PASS', checks, info };
-if (args.has('--write')) await writeFile(path.join(root, 'qa/m0/private-bridge-report.json'), `${JSON.stringify(report, null, 2)}\n`);
+const report = {
+  check: 'hangaram-private-bridge', mode: hg01Requested ? 'hg01-4-chunk' : 'baseline-only',
+  koreaDir: 'WORLDFORGE_KOREA_DIR (local, not published)',
+  koreaCommit: commit, result: failed.length ? 'FAIL' : 'PASS', checks, info,
+};
+if (args.has('--write')) await writeFile(path.join(root, 'qa/hg-01/private-bridge-report.json'), `${JSON.stringify(report, null, 2)}\n`);
 for (const c of checks) console.log(`${c.result}  ${c.name}`);
 console.log(`private bridge check ${report.result} · ${checks.length - failed.length}/${checks.length} · KOREA ${commit ?? 'unknown commit'}`);
 process.exit(failed.length ? 1 : 0);
