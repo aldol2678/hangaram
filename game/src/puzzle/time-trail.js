@@ -10,6 +10,9 @@ export const TRAIL_STEPS = Object.freeze([
 export const TRAIL_BARRIERS = Object.freeze([
   Object.freeze({ id: 'west-rail', era: 'both', position: [23, 0.65, 70], size: [1, 1.3, 36] }),
   Object.freeze({ id: 'east-rail', era: 'both', position: [30, 0.65, 70], size: [1, 1.3, 36] }),
+  // Close the far end: the surrounding world is walkable, so side rails alone
+  // let players go around both gates and enter the exit checkpoint from behind.
+  Object.freeze({ id: 'end-rail', era: 'both', position: [26.5, 0.65, 88], size: [8, 1.3, 1] }),
   Object.freeze({ id: 'past-gate', era: 'joseon-1792', position: [26.5, 0.65, 62], size: [6, 1.3, 1] }),
   Object.freeze({ id: 'modern-gate', era: 'modern-2026', position: [26.5, 0.65, 76], size: [6, 1.3, 1] }),
 ]);
