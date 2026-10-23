@@ -1,0 +1,119 @@
+{
+  "check": "HG02 bridge",
+  "publicCommit": "903fc4bc95023fdf2b58743adf89a0d9aeeaa2c0",
+  "privateCommit": "353ec376fcbee3528823006958233d0d63260c70",
+  "sourceCommit": "4b7f53f68807923560f9571a8ffbb8928c482e3c",
+  "checks": [
+    {
+      "name": "public repository identity",
+      "result": "PASS"
+    },
+    {
+      "name": "source commit ancestor",
+      "result": "PASS"
+    },
+    {
+      "name": "game/src/core/place-id.js",
+      "result": "PASS",
+      "blob": "a5ecd083af3cccc99d953d1c06d1cedb207e8456"
+    },
+    {
+      "name": "game/src/core/world-grid.js",
+      "result": "PASS",
+      "blob": "dbdc8cdbd9c0dc9e43fd1a5b46414ac7a0f2ed5b"
+    },
+    {
+      "name": "game/src/era/blockout.js",
+      "result": "PASS",
+      "blob": "c71807be78002cbcab9e44dc53d2ac24da2ed327"
+    },
+    {
+      "name": "game/src/era/era-pack.js",
+      "result": "PASS",
+      "blob": "22e9e2039e8f32b978298fc1b8a5ed23fc28f227"
+    },
+    {
+      "name": "game/src/era/registry.js",
+      "result": "PASS",
+      "blob": "cd0fad797abab422191dbf5872d19fc65f3e41ba"
+    },
+    {
+      "name": "game/src/era/transaction.js",
+      "result": "PASS",
+      "blob": "9d757c18826278694e017827dbaede6d8f421875"
+    },
+    {
+      "name": "game/src/era/transition.js",
+      "result": "PASS",
+      "blob": "802596fdb8be25df88fdc546a97d8a05d83dca8b"
+    },
+    {
+      "name": "game/src/save/candidate.js",
+      "result": "PASS",
+      "blob": "6426897b1e185c02d66fab1fa602f4d9ead09479"
+    },
+    {
+      "name": "game/src/save/format.js",
+      "result": "PASS",
+      "blob": "63a89429c00eff136bb276a99d67b8c5a93dfeb3"
+    },
+    {
+      "name": "game/src/save/legacy-korea.js",
+      "result": "PASS",
+      "blob": "58b01210a581fefbee94860b39b5ade70053449d"
+    },
+    {
+      "name": "game/src/save/migrations.js",
+      "result": "PASS",
+      "blob": "ac939043613779dc1797e760dcb07edcc5173ac9"
+    },
+    {
+      "name": "game/src/save/storage.js",
+      "result": "PASS",
+      "blob": "660193121b3ae837d3b1125be1e391e36ecc9671"
+    },
+    {
+      "name": "game/worldpacks/index.json",
+      "result": "PASS",
+      "blob": "7ff73b77b32d7cb7bd1d60e77f8203416874536f"
+    },
+    {
+      "name": "game/worldpacks/joseon-1792/chunks/naru.blockout.json",
+      "result": "PASS",
+      "blob": "ab028d2593ffac7533bea635c6e154153e4259f9"
+    },
+    {
+      "name": "game/worldpacks/joseon-1792/pack.json",
+      "result": "PASS",
+      "blob": "2971ad03cb0349f946977bbfff5963e838065c7a"
+    },
+    {
+      "name": "game/worldpacks/modern-2026/chunks/naru.blockout.json",
+      "result": "PASS",
+      "blob": "00da3a864bf56bed7808bbcc5eb677448f0e14be"
+    },
+    {
+      "name": "game/worldpacks/modern-2026/pack.json",
+      "result": "PASS",
+      "blob": "dcc4a576232eb7745ecada9171f851f2c40256ab"
+    },
+    {
+      "name": "game/worldpacks/places.json",
+      "result": "PASS",
+      "blob": "d68ba0fb53b253d4e3f0a18244ef7d24917342fa"
+    },
+    {
+      "name": "modern entities exactly match public primitives",
+      "result": "PASS"
+    },
+    {
+      "name": "modern single 64m cell",
+      "result": "PASS"
+    },
+    {
+      "name": "modern collision and reserved edge",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

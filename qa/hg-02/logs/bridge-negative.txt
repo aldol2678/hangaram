@@ -1,0 +1,20 @@
+
+> hangaram@0.0.1-m0 check:bridge:negative
+> node scripts/check-bridge-negative.mjs --write
+
+PASS  control-unmodified  exit=0  failed=[]
+PASS  wrong-naru-uri  exit=1  failed=[HG-01 blockout catalog exact]
+PASS  moved-naru-bounds  exit=1  failed=[HG-01 blockout catalog exact]
+PASS  legacy-market-uri-changed  exit=1  failed=[legacy chunk catalog unchanged]
+PASS  reserved-cell-occupied  exit=1  failed=[HG-01 blockout catalog exact; planned and reserved slots remain unoccupied]
+PASS  tampered-vendor-blockout  exit=1  failed=[public and private HG-01 JSON bytes identical]
+PASS  forged-blob-sha  exit=1  failed=[vendor Git blob SHA matches public data]
+PASS  unknown-source-commit  exit=1  failed=[vendor source commit in public history]
+PASS  wrong-source-repository  exit=1  failed=[source repository and path match approved public blockout]
+PASS  world-bounds-not-extended  exit=1  failed=[WorldForge southern bounds support HG-01]
+PASS  save-key-changed  exit=1  failed=[legacy save key identical]
+PASS  errand-id-renamed  exit=1  failed=[errand ids identical]
+PASS  wrong-commit-pr9-without-hg01  exit=1  failed=[HG-01 blockout catalog exact; HG-01 vendor source available and parseable]
+PASS  wrong-commit-alpha04-not-descendant  exit=1  failed=[load life-quests.js; source descends from pinned KOREA baseline; HG-01 blockout catalog exact; HG-01 vendor source available and parseable]
+PASS  tampered-public-blockout  exit=1  failed=[public and private HG-01 JSON bytes identical; vendor Git blob SHA matches public data]
+bridge negative check PASS · 15/15 cases behaved as expected · KOREA 353ec376fcbee3528823006958233d0d63260c70

@@ -1,0 +1,5 @@
+
+> hangaram@0.0.1-m0 check:boundary
+> node scripts/check-boundary.mjs
+
+hangaram boundary check PASS · 106 files scanned · allowlisted assets 0

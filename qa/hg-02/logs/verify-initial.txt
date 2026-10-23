@@ -1,0 +1,102 @@
+
+> hangaram@0.0.1-m0 verify
+> npm test && npm run check:boundary && npm run build && npm run check:dist
+
+
+> hangaram@0.0.1-m0 test
+> node --test test/*.test.mjs
+
+✔ 엔진 호스트 계약은 필수 메서드와 capabilities를 강제한다 (1.936286ms)
+✔ 공개 호스트 세션: 12청크 서술자를 올리되 적재 가능한 내용은 블록아웃 1개 (1.879311ms)
+✔ worldforge-korea 능력이 있는 호스트에서는 기존 3청크가 적재 가능해진다 (0.38475ms)
+✔ 2026 세션은 나루 블록아웃 1개와 예약 셀 4개 (0.270567ms)
+✔ 미리보기 초점: 카메라 기준 이동, 북쪽=-z, 범위 제한 (0.478921ms)
+file:///workspace/hangaram/test/era-pack.test.mjs:71
+  assert.match(validateEraPack(missingDoc, { places, blockouts: new Map([['naru', await readWorldpackJson('modern-2026/chunks/naru.blockout.json')]]) }).errors.join('\n'), /blockout document missing/);
+                                                                                  ^^^^^
+
+SyntaxError: Unexpected reserved word
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at node:internal/modules/esm/loader:632:32
+    at TracingChannel.tracePromise (node:diagnostics_channel:362:14)
+
+Node.js v24.19.0
+✖ test/era-pack.test.mjs (37.734308ms)
+✔ HG-01 contract: original three chunks plus fourth naru pass (1.529474ms)
+✔ HG-01 contract: modified naru URI fails without rejecting unchanged legacy (0.231799ms)
+✔ HG-01 contract: occupied planned cell and extra hg- chunk rejected (0.355756ms)
+✔ HG-01 contract: old or missing naru rejected (0.163306ms)
+✔ HG-01 provenance: matching bytes, Git blob, commit and bounds pass (0.286982ms)
+✔ HG-01 provenance: tampered vendor and wrong commit fail (0.961518ms)
+✔ HG-01 provenance: wrong blob SHA and invalid world bounds fail (0.209616ms)
+✔ HG-01 A1: 공개 블록아웃 형식, 좌표, 고유 ID 및 예산 (1.731598ms)
+✔ HG-01 A2: 시장 6m 도로와 x=0, z=32 끊김 없이 연결 (0.880676ms)
+✔ HG-01 A3: 0.5m 격자에서 선착장·짐·대기자리 도달 (33.289344ms)
+✔ HG-01 A4: 상호작용 자리표시 모두 도달 가능 (41.939125ms)
+✔ HG-01 A5: 강변 수면은 장식 영역, 독립 연속 수면은 z>=96 (0.269606ms)
+✔ HG-01 A6: 미리보기용 엔진 호스트에 나루만 공개 로드 (0.53095ms)
+✔ 스틱 벡터: 데드존, 크기 제한, 화면 위 = forward (1.70616ms)
+✔ 스틱 8방향 고정은 KOREA 스틱처럼 45° 단위로 맞춘다 (0.142615ms)
+✔ 키보드 배치는 기존 KOREA 조작과 같다 (0.215724ms)
+✔ 의도 버퍼: 엣지 입력은 한 번만 소비, 반복 키는 무시, 달리기는 토글 (0.32508ms)
+✔ 의도 버퍼: 스틱이 키보드보다 우선하고 releaseAll은 달리기 토글을 유지한다 (0.414724ms)
+✔ 멀티터치: 스틱을 누른 채 두 번째 손가락의 점프·달리기가 pointerdown 즉시 동작한다 (0.408685ms)
+✔ 멀티터치: 두 번째 포인터는 스틱을 빼앗지 않고, cancelAll은 모두 해제한다 (0.218749ms)
+✔ 터치 배치 320x740: 44px 이상, 겹침 없음, safe-area 안 (0.518201ms)
+✔ 터치 배치 390x844: 44px 이상, 겹침 없음, safe-area 안 (0.159551ms)
+✔ 터치 배치 844x390: 44px 이상, 겹침 없음, safe-area 안 (0.327103ms)
+✔ 터치 배치 1280x800: 44px 이상, 겹침 없음, safe-area 안 (0.151027ms)
+✔ 터치 배치 390x844 safe-area: 44px 이상, 겹침 없음, safe-area 안 (0.082404ms)
+✔ 터치 배치 844x390 safe-area: 44px 이상, 겹침 없음, safe-area 안 (0.601075ms)
+✔ 터치 배치 검증은 실제 위반을 잡아낸다 (0.293292ms)
+✔ 레지스트리는 연도순 시대 목록과 기본 시대를 갖는다 (2.254575ms)
+✔ 청크 서술자: 기존 3청크는 worldforge-korea 런타임이 있을 때만 적재 가능 (0.665503ms)
+✔ 장소 해석: 같은 장소 ID가 시대마다 같은 기준점을 쓰고, 내용 유무는 시대별로 다르다 (1.563855ms)
+✔ 기존 3청크 재사용 경로: KOREA 카탈로그 형식으로 변환한 결과가 PR #9 기록 좌표와 같다 (0.424229ms)
+✔ 신규 청크가 블록아웃이 되면 KOREA ID와 겹치지 않는 hg- 접두 ID로 변환된다 (7.328146ms)
+✔ 잘못된 팩은 레지스트리 생성 단계에서 막힌다 (7.521637ms)
+✔ 새 저장은 v1 구조를 통과하고 기본 시대·위치를 쓴다 (1.890467ms)
+✔ 버전 판별: KOREA 레거시=0, 한가람=v, 그 외=null (0.224879ms)
+✔ 마이그레이션 단계는 고유 ID와 연속 버전을 갖는다 (0.157978ms)
+✔ m0001: KOREA 저장을 감싸며 원문·진행 ID·재화를 그대로 보존한다 (1.02885ms)
+✔ m0001: 형식이 틀린 값은 0/null로 두고 보고하며, 원문은 남는다 (0.559723ms)
+✔ v1 저장의 알 수 없는 최상위 필드는 지우지 않는다 (0.200622ms)
+✔ 미래 버전·알 수 없는 형식·구조 오류는 읽기 전용으로 거부한다 (0.385951ms)
+✔ 저장소: KOREA 레거시 키는 읽기만 하고 절대 쓰거나 지우지 않는다 (0.638782ms)
+✔ 저장소: 손상·미래 버전 저장은 덮어쓰지 않는다 (0.420233ms)
+✔ 저장소: 한가람 키에 레거시 형식이 들어 있으면 원문을 백업한 뒤 한 번만 마이그레이션 기록한다 (0.459081ms)
+✔ 저장소: 손상된 레거시는 무시하고 새 저장으로 시작하되 레거시를 남긴다 (0.275785ms)
+✔ 저장소 접근 예외(사생활 모드 등)에서도 실패를 돌려줄 뿐 던지지 않는다 (0.999845ms)
+✔ M0에서 시대 전환은 비활성이며 사전 점검이 항상 막는다 (1.950537ms)
+✔ 사전 점검은 이유를 모두 모은다: 같은 시대, 모르는 장소, 작업 중, 진행 중 전환 (0.195956ms)
+✔ 출발 시대에 내용이 없는 장소에서는 전환할 수 없다 (갈대 물가는 아직 계획 단계) (0.140642ms)
+✔ HG-02 나루 내용은 있지만 어댑터 capability 없이는 계속 비활성이다 (0.1665ms)
+✔ 중단된 전환은 체크포인트로 되돌리고 입력을 바꾸지 않는다 (1.323694ms)
+✔ 저장을 읽을 때 마이그레이션 파이프라인이 중단된 전환을 복구한다 (0.589137ms)
+✔ 공통 좌표계: 64m 청크, +x 동쪽 +z 남쪽, 실측 아님 (1.334329ms)
+✔ 기존 3청크와 신규 2청크 셀 경계가 설계 좌표와 같다 (0.246581ms)
+✔ cellOf는 반열림 구간으로 경계를 동쪽·남쪽 셀에 배정한다 (0.195514ms)
+✔ 셀 키 파싱은 정규 표기만 허용한다 (1.36104ms)
+✔ 인접 청크는 겹치지 않고, 경계 위 점은 양쪽에 포함된다 (0.266231ms)
+✔ 장소 ID 문법 (0.222074ms)
+ℹ tests 63
+ℹ suites 0
+ℹ pass 62
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 255.131856
+
+✖ failing tests:
+
+test at test/era-pack.test.mjs:1:1
+✖ test/era-pack.test.mjs (37.734308ms)
+  'test failed'
