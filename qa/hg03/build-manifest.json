@@ -1,0 +1,56 @@
+{
+  "name": "hangaram-preview",
+  "version": "0.0.1-m0",
+  "files": [
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 1170,
+      "sha256": "768b915cb16e59a2ce6dd069f6f2e07e1e0bf63630a3332a01c2ef3e86703a05"
+    },
+    {
+      "path": "app.js",
+      "bytes": 1992739,
+      "sha256": "b8014319a6e842ca40ee0ae8aaf31c77f2df4438b5eb9184d43b8b6305545fcb"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1971,
+      "sha256": "4784afb6beeac6867aa86284596b5c3a309b8910d1030653b2ca57cd6a2122ac"
+    },
+    {
+      "path": "preview.css",
+      "bytes": 3952,
+      "sha256": "1a7fc43037ddc00c63782f12731d0c5c7bbda3bcf95732b208399f6e4f53b62c"
+    },
+    {
+      "path": "worldpacks/index.json",
+      "bytes": 180,
+      "sha256": "47746036c71140f4c49fed919ae216f8598039c7b24d49893985d386da46d59c"
+    },
+    {
+      "path": "worldpacks/joseon-1792/chunks/naru.blockout.json",
+      "bytes": 13817,
+      "sha256": "ca84bb63d3c9088291ce810a614848e712e12aba7a753d8bf12383517e397638"
+    },
+    {
+      "path": "worldpacks/joseon-1792/pack.json",
+      "bytes": 4011,
+      "sha256": "23bc14ff9551232ee73410d6199714c707526b841a566a78952073321fafeae1"
+    },
+    {
+      "path": "worldpacks/modern-2026/chunks/naru.blockout.json",
+      "bytes": 6156,
+      "sha256": "210c577b749a55a3b0ead7ddbcf6deb8286f9abe60b124e91b85ea537b4c3e04"
+    },
+    {
+      "path": "worldpacks/modern-2026/pack.json",
+      "bytes": 1440,
+      "sha256": "db2467b1fa746ad2ffbf042783a6d56fbcfb3494090d08d94412617a88e75cc5"
+    },
+    {
+      "path": "worldpacks/places.json",
+      "bytes": 1521,
+      "sha256": "a550a7a2b670ecf58efc7e5fed118c6c8f8181ed381fb3d334168eca7d049ca0"
+    }
+  ]
+}
