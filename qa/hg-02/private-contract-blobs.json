@@ -1,0 +1,31 @@
+{
+  "repository": "aldol2678/aldol-worldforge",
+  "commit": "353ec376fcbee3528823006958233d0d63260c70",
+  "contentsPublished": false,
+  "files": [
+    {
+      "path": "examples/worldforge-korea/src/main.js",
+      "blob": "04e62f3bb00af732d70cbaf7098c0d5b49dbc471"
+    },
+    {
+      "path": "examples/worldforge-korea/src/hg02-era.js",
+      "blob": "8f792438f6a1d9913b0f19f9d7299502953ad66a"
+    },
+    {
+      "path": "examples/worldforge-korea/src/chunk-content.js",
+      "blob": "39d28ae7dc67ff00eb78a72e5582050456d5edac"
+    },
+    {
+      "path": "examples/worldforge-korea/src/collision.js",
+      "blob": "4080eb61b300e28ddb487fa63b34c11379904191"
+    },
+    {
+      "path": "examples/worldforge-korea/src/locomotion.js",
+      "blob": "72f808d1d8856f104b31c3b1026d893648e52c2e"
+    },
+    {
+      "path": "examples/worldforge-korea/src/chunk-catalog.js",
+      "blob": "3612895d14333e26192b542e0d186d5c053fbbb9"
+    }
+  ]
+}

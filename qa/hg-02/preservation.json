@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-10-23T12:11:13.797764+00:00",
+  "checks": [
+    {
+      "name": "public history, 1792, workflow and lock preserved",
+      "result": "PASS",
+      "paths": [
+        "game/worldpacks/joseon-1792",
+        "qa/hg-01",
+        "qa/m0",
+        "package-lock.json",
+        ".github"
+      ]
+    },
+    {
+      "name": "private assets, fonts, HG01 evidence and workflow preserved",
+      "result": "PASS",
+      "paths": [
+        "examples/worldforge-korea/assets",
+        "examples/worldforge-korea/ui",
+        "examples/worldforge-korea/qa/hg01",
+        "examples/worldforge-korea/qa/chunks",
+        "examples/worldforge-korea/qa/alpha05",
+        "examples/worldforge-korea/vendor/hangaram/naru.blockout.json",
+        ".github"
+      ]
+    },
+    {
+      "name": "original gameplay modules preserved",
+      "result": "PASS",
+      "paths": [
+        "examples/worldforge-korea/src/economy.js",
+        "examples/worldforge-korea/src/life-quests.js",
+        "examples/worldforge-korea/src/errands.js",
+        "examples/worldforge-korea/src/collision.js",
+        "examples/worldforge-korea/src/locomotion.js",
+        "examples/worldforge-korea/src/input.js",
+        "examples/worldforge-korea/src/camera-input.js",
+        "examples/worldforge-korea/src/chunk-catalog.js"
+      ]
+    },
+    {
+      "name": "hangaram diff whitespace",
+      "result": "PASS"
+    },
+    {
+      "name": "aldol-worldforge diff whitespace",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS",
+  "operations": "No main/parent push, force push, rebase, merge, deployment, service/domain/auth changes. No private resources copied to public."
+}

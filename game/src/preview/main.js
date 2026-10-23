@@ -71,7 +71,7 @@ async function main() {
     session = await openEraSession({ registry, host: preview.host, eraId });
     const pack = registry.pack(eraId);
     const counts = Object.entries(session.summary.byStatus).map(([s, n]) => `${STATUS_SHORT_LABELS[s]} ${n}`).join(' · ');
-    $('era-note').textContent = `${pack.disclaimer}${ERA_TRANSITION_ENABLED ? '' : ' 게임 내 시대 전환은 아직 구현되지 않았다.'}`;
+    $('era-note').textContent = `${pack.disclaimer}${ERA_TRANSITION_ENABLED ? '' : ' 이 화면은 데이터 검수용이다. 실제 시대 전환은 비공개 HG-02 통합 런타임에서 제공한다.'}`;
     $('legend').textContent = `청크 ${session.summary.total} (${counts})`;
   }
   eraSelect.addEventListener('change', () => showEra(eraSelect.value));

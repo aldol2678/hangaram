@@ -135,7 +135,7 @@ const report = {
   koreaDir: 'WORLDFORGE_KOREA_DIR (local, not published)',
   koreaCommit: commit, result: failed.length ? 'FAIL' : 'PASS', checks, info,
 };
-if (args.has('--write')) await writeFile(path.join(root, 'qa/hg-01/private-bridge-report.json'), `${JSON.stringify(report, null, 2)}\n`);
+if (args.has('--write')) await writeFile(path.join(root, process.env.HG_BRIDGE_REPORT || 'qa/hg-01/private-bridge-report.json'), `${JSON.stringify(report, null, 2)}\n`);
 for (const c of checks) console.log(`${c.result}  ${c.name}`);
 console.log(`private bridge check ${report.result} · ${checks.length - failed.length}/${checks.length} · KOREA ${commit ?? 'unknown commit'}`);
 process.exit(failed.length ? 1 : 0);

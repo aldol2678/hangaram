@@ -1,0 +1,34 @@
+[
+  {
+    "repo": "aldol2678/hangaram",
+    "pr": 1,
+    "head": "f7abea27c069e4c9bbca394f8edc9ab1063a4723",
+    "branch": "ccr-a392185e-vf4qag",
+    "draft": true,
+    "state": "open"
+  },
+  {
+    "repo": "aldol2678/hangaram",
+    "pr": 2,
+    "head": "edfe44feb7c388cff5ad3f40a6a3af2dfc1d6ff6",
+    "branch": "feat/hg01-mapo-naru-blockout-20261023",
+    "draft": true,
+    "state": "open"
+  },
+  {
+    "repo": "aldol2678/aldol-worldforge",
+    "pr": 9,
+    "head": "cb4d077702de8b767204f18b0ab1f25eb3b70163",
+    "branch": "feature/korea-alpha-03-market-art",
+    "draft": true,
+    "state": "open"
+  },
+  {
+    "repo": "aldol2678/aldol-worldforge",
+    "pr": 10,
+    "head": "5d215b325e22480f23f0a6aaaf555524d596e280",
+    "branch": "feat/hg01-worldforge-bridge-20261023",
+    "draft": true,
+    "state": "open"
+  }
+]

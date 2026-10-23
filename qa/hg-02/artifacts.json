@@ -1,0 +1,16 @@
+{
+  "public": {
+    "testedCommit": "903fc4bc95023fdf2b58743adf89a0d9aeeaa2c0",
+    "bundle": {
+      "bytes": 1992739,
+      "sha256": "b8014319a6e842ca40ee0ae8aaf31c77f2df4438b5eb9184d43b8b6305545fcb"
+    }
+  },
+  "private": {
+    "testedCommit": "353ec376fcbee3528823006958233d0d63260c70",
+    "bundle": {
+      "bytes": 2392598,
+      "sha256": "b7a43ebf287765ef93ab0561f689223410b1069984b60c599bffeea1148bdfd1"
+    }
+  }
+}

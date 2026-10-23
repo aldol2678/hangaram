@@ -1,0 +1,120 @@
+{
+  "runtimeCodeCommit": "353ec376fcbee3528823006958233d0d63260c70",
+  "initialRuntimeCommit": "5fd6f6978e74ef4afa378eb9592d78d2defdd938",
+  "playable": {
+    "result": "PASS",
+    "viewports": [
+      {
+        "viewport": "320x740",
+        "result": "PASS",
+        "checks": 22
+      },
+      {
+        "viewport": "390x844",
+        "result": "PASS",
+        "checks": 22
+      },
+      {
+        "viewport": "844x390",
+        "result": "PASS",
+        "checks": 22
+      },
+      {
+        "viewport": "1280x800",
+        "result": "PASS",
+        "checks": 21
+      }
+    ],
+    "maxCoordinateErrorM": 0.09261322021484375,
+    "coordinateSamples": 16
+  },
+  "controls": {
+    "result": "PASS",
+    "viewports": 4,
+    "checks": 12
+  },
+  "layout": {
+    "result": "PASS",
+    "viewports": 4,
+    "overlapCount": 0
+  },
+  "failureRecovery": {
+    "result": "PASS",
+    "checks": 8
+  },
+  "soak": {
+    "result": "PASS",
+    "seconds": 916.57,
+    "roundTrips": 51,
+    "sceneNodes": [
+      1193,
+      1193
+    ],
+    "renderComponents": [
+      581,
+      581
+    ],
+    "eventListeners": [
+      89,
+      89
+    ],
+    "jsHeapBytesRange": [
+      21435348,
+      49202344
+    ],
+    "frameMedianMsRange": [
+      183.19999999999982,
+      633.4000000000233
+    ],
+    "frameP95MsRange": [
+      400,
+      1399.9000000000233
+    ]
+  },
+  "ANDROID_PHYSICAL_QA": "NOT_VERIFIED",
+  "privateEvidence": "aldol2678/aldol-worldforge:examples/worldforge-korea/qa/hg02; private screenshots and raw reports retained only in private repository",
+  "notes": [
+    "Full gameplay uses held keys or CDP finger input; no runtime-state teleport after initial spawn.",
+    "Final UI layout/input replay covers the landscape fix on all four viewports.",
+    "Soak ran on initial implementation; final runtime change is UI placement/copy/map availability only.",
+    "Slow software frame measurements do not establish device FPS or GPU memory performance."
+  ],
+  "regression": {
+    "hg01Walking": {
+      "result": "PASS",
+      "privateEvidence": "regression/hg02/browser-hg01-naru/browser-report.json",
+      "domClickSubstitution": false
+    },
+    "map": {
+      "result": "PASS",
+      "privateEvidence": "regression/hg02/browser-map/browser-report.json",
+      "domClickSubstitution": false
+    },
+    "naruMap": {
+      "result": "PASS",
+      "privateEvidence": "regression/hg02/browser-hg01-map/map-report.json",
+      "domClickSubstitution": false
+    },
+    "chunksLogic": {
+      "result": "PASS",
+      "privateEvidence": "regression/hg02/browser-chunks-dom-fallback/browser-report.json",
+      "domClickSubstitution": true
+    },
+    "chunkRecoveryLogic": {
+      "result": "PASS",
+      "privateEvidence": "regression/hg02/browser-chunk-recovery-dom-fallback/recovery-report.json",
+      "domClickSubstitution": true
+    },
+    "alpha05Logic": {
+      "result": "PASS",
+      "privateEvidence": "regression/hg02/browser-alpha05-dom-fallback/browser-report.json",
+      "domClickSubstitution": true
+    },
+    "pr9Alpha05Logic": {
+      "result": "PASS",
+      "privateEvidence": "regression/pr9/browser-alpha05-dom-fallback/browser-report.json",
+      "domClickSubstitution": true
+    }
+  },
+  "overall": "HG-02 PLAYABLE VERIFIED (browser emulation)"
+}
