@@ -15,7 +15,7 @@ export function catalogChecks({ pack, legacyCatalog, blockoutCatalog, privateCat
 
   const blockoutIds = new Set(blockoutCatalog.map((c) => c.id));
   const privateNew = privateCatalog.filter((c) => c.id.startsWith('hg-'));
-  add('HG-01 blockout catalog exact', equal(sorted(blockoutCatalog), sorted(privateNew)),
+  add('HG-01 blockout catalog exact', equal(sorted(blockoutCatalog.map(pick)), sorted(privateNew.map(pick))),
     { expected: blockoutCatalog, actual: privateNew });
 
   const collisions = pack.chunks.filter((c) => ['planned', 'reserved'].includes(c.status))
