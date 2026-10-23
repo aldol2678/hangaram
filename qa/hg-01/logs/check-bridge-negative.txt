@@ -1,3 +1,7 @@
+
+> hangaram@0.0.1-m0 check:bridge:negative
+> node scripts/check-bridge-negative.mjs --write
+
 PASS  control-unmodified  exit=0  failed=[]
 PASS  wrong-naru-uri  exit=1  failed=[HG-01 blockout catalog exact]
 PASS  moved-naru-bounds  exit=1  failed=[HG-01 blockout catalog exact]
@@ -13,4 +17,4 @@ PASS  errand-id-renamed  exit=1  failed=[errand ids identical]
 PASS  wrong-commit-pr9-without-hg01  exit=1  failed=[HG-01 blockout catalog exact; HG-01 vendor source available and parseable]
 PASS  wrong-commit-alpha04-not-descendant  exit=1  failed=[load life-quests.js; source descends from pinned KOREA baseline; HG-01 blockout catalog exact; HG-01 vendor source available and parseable]
 PASS  tampered-public-blockout  exit=1  failed=[public and private HG-01 JSON bytes identical; vendor Git blob SHA matches public data]
-bridge negative check PASS · 15/15 cases behaved as expected · KOREA 3efd66fc1b663f4afd5fbd7e73767f85eba7dfb0
+bridge negative check PASS · 15/15 cases behaved as expected · KOREA 5d215b325e22480f23f0a6aaaf555524d596e280

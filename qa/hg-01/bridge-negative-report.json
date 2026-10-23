@@ -1,12 +1,12 @@
 {
   "check": "hangaram-private-bridge-negative",
-  "koreaHead": "3efd66fc1b663f4afd5fbd7e73767f85eba7dfb0",
+  "koreaHead": "5d215b325e22480f23f0a6aaaf555524d596e280",
   "result": "PASS",
   "cases": [
     {
       "case": "control-unmodified",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 0,
       "expectedFailures": [],
       "observedFailures": [],
@@ -15,7 +15,7 @@
     {
       "case": "wrong-naru-uri",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "HG-01 blockout catalog exact"
@@ -28,7 +28,7 @@
     {
       "case": "moved-naru-bounds",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "HG-01 blockout catalog exact"
@@ -41,7 +41,7 @@
     {
       "case": "legacy-market-uri-changed",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "legacy chunk catalog unchanged"
@@ -54,7 +54,7 @@
     {
       "case": "reserved-cell-occupied",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "planned and reserved slots remain unoccupied",
@@ -69,7 +69,7 @@
     {
       "case": "tampered-vendor-blockout",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "public and private HG-01 JSON bytes identical"
@@ -82,7 +82,7 @@
     {
       "case": "forged-blob-sha",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "vendor Git blob SHA matches public data"
@@ -95,7 +95,7 @@
     {
       "case": "unknown-source-commit",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "vendor source commit in public history"
@@ -108,7 +108,7 @@
     {
       "case": "wrong-source-repository",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "source repository and path match approved public blockout"
@@ -121,7 +121,7 @@
     {
       "case": "world-bounds-not-extended",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "WorldForge southern bounds support HG-01"
@@ -134,7 +134,7 @@
     {
       "case": "save-key-changed",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "legacy save key identical"
@@ -147,7 +147,7 @@
     {
       "case": "errand-id-renamed",
       "side": "private",
-      "commit": "3efd66fc1b66",
+      "commit": "5d215b325e22",
       "exit": 1,
       "expectedFailures": [
         "errand ids identical"
@@ -192,7 +192,7 @@
     {
       "case": "tampered-public-blockout",
       "side": "public",
-      "commit": "1ffbe69bc8e4",
+      "commit": "42f21c8a971e",
       "exit": 1,
       "expectedFailures": [
         "public and private HG-01 JSON bytes identical",

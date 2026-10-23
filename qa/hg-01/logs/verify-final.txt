@@ -1,0 +1,10 @@
+# tests 72
+# suites 0
+# pass 72
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+hangaram boundary check PASS · 77 files scanned · allowlisted assets 0
+hangaram preview build OK · 9 files · app.js 1992334 bytes sha256 07f7a6f35d2dcb268e335bb25449984c3340e274f1b63fe21a1fa22940d4be00
+hangaram dist check PASS · 9 files · app.js 1992334 bytes sha256 07f7a6f35d2dcb268e335bb25449984c3340e274f1b63fe21a1fa22940d4be00

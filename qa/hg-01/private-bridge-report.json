@@ -2,7 +2,7 @@
   "check": "hangaram-private-bridge",
   "mode": "hg01-4-chunk",
   "koreaDir": "WORLDFORGE_KOREA_DIR (local, not published)",
-  "koreaCommit": "3efd66fc1b663f4afd5fbd7e73767f85eba7dfb0",
+  "koreaCommit": "5d215b325e22480f23f0a6aaaf555524d596e280",
   "result": "PASS",
   "checks": [
     {
@@ -25,7 +25,7 @@
       "name": "source descends from pinned KOREA baseline",
       "result": "PASS",
       "pinnedBaseline": "cb4d077702de8b767204f18b0ab1f25eb3b70163",
-      "actual": "3efd66fc1b663f4afd5fbd7e73767f85eba7dfb0"
+      "actual": "5d215b325e22480f23f0a6aaaf555524d596e280"
     },
     {
       "name": "legacy chunk catalog unchanged",

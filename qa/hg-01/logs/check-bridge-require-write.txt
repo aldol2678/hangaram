@@ -25,4 +25,4 @@ PASS  life quest ids identical
 PASS  save round trip through hangaram v1 preserves KOREA state
 PASS  migrated progress keeps KOREA ids verbatim
 PASS  migrated position equals KOREA position
-private bridge check PASS · 23/23 · KOREA 3efd66fc1b663f4afd5fbd7e73767f85eba7dfb0
+private bridge check PASS · 23/23 · KOREA 5d215b325e22480f23f0a6aaaf555524d596e280
