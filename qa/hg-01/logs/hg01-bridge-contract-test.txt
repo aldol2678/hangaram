@@ -1,0 +1,15 @@
+# Subtest: HG-01 contract: original three chunks plus fourth naru pass
+# Subtest: HG-01 contract: modified naru URI fails without rejecting unchanged legacy
+# Subtest: HG-01 contract: occupied planned cell and extra hg- chunk rejected
+# Subtest: HG-01 contract: old or missing naru rejected
+# Subtest: HG-01 provenance: matching bytes, Git blob, commit and bounds pass
+# Subtest: HG-01 provenance: tampered vendor and wrong commit fail
+# Subtest: HG-01 provenance: wrong blob SHA and invalid world bounds fail
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 73.276625

@@ -1,0 +1,262 @@
+{
+  "check": "hangaram-private-bridge",
+  "mode": "hg01-4-chunk",
+  "koreaDir": "WORLDFORGE_KOREA_DIR (local, not published)",
+  "koreaCommit": "3efd66fc1b663f4afd5fbd7e73767f85eba7dfb0",
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "load chunk-catalog.js",
+      "result": "PASS"
+    },
+    {
+      "name": "load economy.js",
+      "result": "PASS"
+    },
+    {
+      "name": "load errands.js",
+      "result": "PASS"
+    },
+    {
+      "name": "load life-quests.js",
+      "result": "PASS"
+    },
+    {
+      "name": "source descends from pinned KOREA baseline",
+      "result": "PASS",
+      "pinnedBaseline": "cb4d077702de8b767204f18b0ab1f25eb3b70163",
+      "actual": "3efd66fc1b663f4afd5fbd7e73767f85eba7dfb0"
+    },
+    {
+      "name": "legacy chunk catalog unchanged",
+      "result": "PASS",
+      "expected": [
+        {
+          "id": "grove",
+          "min": [
+            -32,
+            -160
+          ],
+          "max": [
+            32,
+            -96
+          ],
+          "uri": "chunks/grove.json"
+        },
+        {
+          "id": "lane",
+          "min": [
+            -32,
+            -96
+          ],
+          "max": [
+            32,
+            -32
+          ],
+          "uri": "chunks/lane.json"
+        },
+        {
+          "id": "market",
+          "min": [
+            -32,
+            -32
+          ],
+          "max": [
+            32,
+            32
+          ],
+          "uri": "chunks/market.json"
+        }
+      ],
+      "actual": [
+        {
+          "id": "market",
+          "min": [
+            -32,
+            -32
+          ],
+          "max": [
+            32,
+            32
+          ],
+          "uri": "chunks/market.json"
+        },
+        {
+          "id": "lane",
+          "min": [
+            -32,
+            -96
+          ],
+          "max": [
+            32,
+            -32
+          ],
+          "uri": "chunks/lane.json"
+        },
+        {
+          "id": "grove",
+          "min": [
+            -32,
+            -160
+          ],
+          "max": [
+            32,
+            -96
+          ],
+          "uri": "chunks/grove.json"
+        }
+      ]
+    },
+    {
+      "name": "HG-01 blockout catalog exact",
+      "result": "PASS",
+      "expected": [
+        {
+          "id": "hg-naru",
+          "name": "마포나루",
+          "min": [
+            -32,
+            32
+          ],
+          "max": [
+            32,
+            96
+          ],
+          "uri": "chunks/hg-naru.json"
+        }
+      ],
+      "actual": [
+        {
+          "id": "hg-naru",
+          "name": "마포나루 · HG-01 블록아웃",
+          "min": [
+            -32,
+            32
+          ],
+          "max": [
+            32,
+            96
+          ],
+          "uri": "chunks/hg-naru.json"
+        }
+      ]
+    },
+    {
+      "name": "planned and reserved slots remain unoccupied",
+      "result": "PASS",
+      "collisions": []
+    },
+    {
+      "name": "existing legacy IDs not reused by HG-01",
+      "result": "PASS"
+    },
+    {
+      "name": "harvest IDs identical",
+      "result": "PASS",
+      "korea": [
+        "grove.wood.0",
+        "grove.wood.1",
+        "grove.wood.2",
+        "grove.wood.3"
+      ]
+    },
+    {
+      "name": "public naru blockout declared",
+      "result": "PASS"
+    },
+    {
+      "name": "public and private HG-01 JSON bytes identical",
+      "result": "PASS",
+      "sha256": "ca84bb63d3c9088291ce810a614848e712e12aba7a753d8bf12383517e397638"
+    },
+    {
+      "name": "source repository and path match approved public blockout",
+      "result": "PASS"
+    },
+    {
+      "name": "vendor Git blob SHA matches public data",
+      "result": "PASS",
+      "actualBlob": "ab028d2593ffac7533bea635c6e154153e4259f9"
+    },
+    {
+      "name": "vendor source commit in public history",
+      "result": "PASS"
+    },
+    {
+      "name": "WorldForge southern bounds support HG-01",
+      "result": "PASS"
+    },
+    {
+      "name": "legacy save key identical",
+      "result": "PASS",
+      "hangaram": "korea.alpha01.market.save.v1",
+      "korea": "korea.alpha01.market.save.v1"
+    },
+    {
+      "name": "legacy numeric fields covered",
+      "result": "PASS",
+      "hangaram": [
+        "cloth",
+        "coins",
+        "dishes",
+        "meals",
+        "pouches",
+        "rice",
+        "sales",
+        "water",
+        "wood"
+      ],
+      "korea": [
+        "cloth",
+        "coins",
+        "dishes",
+        "meals",
+        "pouches",
+        "rice",
+        "sales",
+        "water",
+        "wood"
+      ]
+    },
+    {
+      "name": "errand ids identical",
+      "result": "PASS",
+      "korea": [
+        "meal",
+        "dishes",
+        "pouch",
+        "north"
+      ]
+    },
+    {
+      "name": "life quest ids identical",
+      "result": "PASS",
+      "korea": [
+        "firewood",
+        "cook",
+        "delivery"
+      ]
+    },
+    {
+      "name": "save round trip through hangaram v1 preserves KOREA state",
+      "result": "PASS"
+    },
+    {
+      "name": "migrated progress keeps KOREA ids verbatim",
+      "result": "PASS"
+    },
+    {
+      "name": "migrated position equals KOREA position",
+      "result": "PASS"
+    }
+  ],
+  "info": {
+    "koreaWorldBounds": {
+      "minX": -30.5,
+      "maxX": 30.5,
+      "minZ": -158.5,
+      "maxZ": 94.5
+    },
+    "note": "HG-01 KOREA 월드 경계·원본 청크·벤더 파일을 코드 계약으로 검사한다. 실제 브라우저 이동/Android 실기기는 별도 QA 대상이다."
+  }
+}
