@@ -28,9 +28,16 @@ test('사전 점검은 이유를 모두 모은다: 같은 시대, 모르는 장�
   assert.ok(unknown.blockers.includes('E_UNKNOWN_ERA'));
 });
 
-test('출발 시대에 내용이 없는 장소에서는 전환할 수 없다 (마포나루는 아직 계획 단계)', () => {
-  const result = preflightTransition(registry, { save: createNewSave({ now }), toEra: 'modern-2026', placeId: 'mapo.naru' });
+test('출발 시대에 내용이 없는 장소에서는 전환할 수 없다 (갈대 물가는 아직 계획 단계)', () => {
+  const result = preflightTransition(registry, { save: createNewSave({ now }), toEra: 'modern-2026', placeId: 'mapo.reed-shore' });
   assert.ok(result.blockers.includes('E_SOURCE_PLACE_UNAVAILABLE'));
+});
+
+test('HG-01 이후 마포나루는 1792 출발지 내용이 있지만 2026 도착지와 전환 구현이 없어 막힌다', () => {
+  const result = preflightTransition(registry, { save: createNewSave({ now }), toEra: 'modern-2026', placeId: 'mapo.naru' });
+  assert.equal(result.blockers.includes('E_SOURCE_PLACE_UNAVAILABLE'), false);
+  assert.ok(result.blockers.includes('E_TARGET_PLACE_UNAVAILABLE'));
+  assert.ok(result.blockers.includes('E_TRANSITION_NOT_IMPLEMENTED'));
 });
 
 test('중단된 전환은 체크포인트로 되돌리고 입력을 바꾸지 않는다', () => {

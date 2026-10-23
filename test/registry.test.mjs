@@ -65,7 +65,9 @@ test('잘못된 팩은 레지스트리 생성 단계에서 막힌다', async () 
   const pack = structuredClone(await readWorldpackJson('joseon-1792/pack.json'));
   pack.chunks[0].status = 'done';
   assert.throws(() => createEraRegistry({ places, packs: [{ pack }], defaultEra: 'joseon-1792' }), /E_ERA_PACK_INVALID/);
-  const good = await readWorldpackJson('joseon-1792/pack.json');
-  assert.throws(() => createEraRegistry({ places, packs: [{ pack: good }, { pack: good }], defaultEra: 'joseon-1792' }), /E_DUPLICATE_ERA/);
-  assert.throws(() => createEraRegistry({ places, packs: [{ pack: good }], defaultEra: 'modern-2026' }), /E_DEFAULT_ERA/);
+  // HG-01부터 1792 팩은 마포나루 블록아웃 문서가 있어야 유효하다. 문서를 함께 넘겨 중복·기본 시대 검사만 본다.
+  const good = { pack: await readWorldpackJson('joseon-1792/pack.json'), blockouts: new Map([['naru', await readWorldpackJson('joseon-1792/chunks/naru.blockout.json')]]) };
+  assert.doesNotThrow(() => createEraRegistry({ places, packs: [good], defaultEra: 'joseon-1792' }));
+  assert.throws(() => createEraRegistry({ places, packs: [good, good], defaultEra: 'joseon-1792' }), /E_DUPLICATE_ERA/);
+  assert.throws(() => createEraRegistry({ places, packs: [good], defaultEra: 'modern-2026' }), /E_DEFAULT_ERA/);
 });
